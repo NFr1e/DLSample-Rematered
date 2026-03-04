@@ -1,0 +1,18 @@
+{
+    "name": "DLSample.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:91a43c94fb2eb114d9c264672bc6a97d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
