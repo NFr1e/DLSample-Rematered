@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DLSample.Gameplay.Behaviours
 {
-    public class GameplaySkinSystemComponent : GameplayComponentBase
+    public class GameplaySkinSystemComponent : GameplayObject
     {
         [SerializeField] private SkinDataScriptable skinsData;
         [SerializeField] private Transform skinsContainer;
@@ -17,15 +17,15 @@ namespace DLSample.Gameplay.Behaviours
             _changer = new SkinChanger(skinsData, skinsContainer);
             _handler = new SkinsHandler(_changer);
 
-            ModulesManager.Register(_changer);
-            ModulesManager.Register(_handler);
+            GameplayEntry.Instance.ModulesManager.Register(_changer);
+            GameplayEntry.Instance.ModulesManager.Register(_handler);
 
-            ServiceLocator.Register<SkinChanger>(_changer);
+            GameplayEntry.Instance.ServiceLocator.Register<SkinChanger>(_changer);
         }
 
         protected override void OnExit() 
         {
-            ServiceLocator.Unregister<SkinChanger>();
+            GameplayEntry.Instance.ServiceLocator.Unregister<SkinChanger>();
 
             _changer = null;
             _handler = null;

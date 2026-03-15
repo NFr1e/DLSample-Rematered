@@ -3,7 +3,7 @@ using DLSample.Gameplay.Stream;
 
 namespace DLSample.Gameplay.Behaviours
 {
-    public class Checkpoint : MonoBehaviour
+    public class Checkpoint : GameplayObject
     {
         [SerializeField] protected double checkTime = 0;
 
@@ -19,25 +19,14 @@ namespace DLSample.Gameplay.Behaviours
 
         public double CheckTime => checkTime;
 
-        private void Start()
+        protected override void OnStart()
         {
-            Init();
-        }
-        private void OnDestroy()
-        {
-            Dispose();
-        }
+            _checkTickEvent = new(checkTime, Check);
 
-        private void Init()
-        {
-            if (_timer is null)
-            {
-                GameplayEntry.Instance.ServiceLocator.TryGet<GameplayTimer>(out _timer);
-            }
-
-            _timer?.RegisterTickEvent(_checkTickEvent);
+            _timer = GameplayEntry.Instance.ServiceLocator.Get<GameplayTimer>();
+            _timer.RegisterTickEvent(_checkTickEvent);
         }
-        private void Dispose()
+        protected override void OnExit()
         {
             _timer?.UnregisterTickEvent(_checkTickEvent);
         }

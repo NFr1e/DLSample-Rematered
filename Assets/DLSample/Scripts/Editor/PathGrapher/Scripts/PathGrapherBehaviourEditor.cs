@@ -1,3 +1,4 @@
+#if ODIN_INSPECTOR
 using Sirenix.OdinInspector.Editor;
 using System.Collections.Generic;
 using UnityEditor;
@@ -347,3 +348,4 @@ namespace DLSample.Editor.PathGrapher
         #endregion
     }
 }
+#endif

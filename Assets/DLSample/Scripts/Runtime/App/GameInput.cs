@@ -91,6 +91,54 @@ namespace DLSample.App
     ""name"": ""GameInput"",
     ""maps"": [
         {
+            ""name"": ""App"",
+            ""id"": ""11894058-3d05-4207-a5b1-05d52a3e78dc"",
+            ""actions"": [
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2a994c4-633f-4f9a-a2a7-175e369a44f3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""9bca2ec8-36fd-4143-b100-de7a201afc80"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""45b61c5f-ee5f-456e-a697-eccdcd8b1f5c"",
+                    ""path"": ""*/{Submit}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8869b97c-620a-4343-8879-863192762755"",
+                    ""path"": ""*/{Cancel}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Gameplay"",
             ""id"": ""014e2ccb-0f13-4dc2-9815-23daf3662b8f"",
             ""actions"": [
@@ -174,6 +222,10 @@ namespace DLSample.App
     ],
     ""controlSchemes"": []
 }");
+            // App
+            m_App = asset.FindActionMap("App", throwIfNotFound: true);
+            m_App_Submit = m_App.FindAction("Submit", throwIfNotFound: true);
+            m_App_Cancel = m_App.FindAction("Cancel", throwIfNotFound: true);
             // Gameplay
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_PlayerInput = m_Gameplay.FindAction("PlayerInput", throwIfNotFound: true);
@@ -182,6 +234,7 @@ namespace DLSample.App
 
         ~@GameInput()
         {
+            UnityEngine.Debug.Assert(!m_App.enabled, "This will cause a leak and performance issues, GameInput.App.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, GameInput.Gameplay.Disable() has not been called.");
         }
 
@@ -254,6 +307,113 @@ namespace DLSample.App
         {
             return asset.FindBinding(bindingMask, out action);
         }
+
+        // App
+        private readonly InputActionMap m_App;
+        private List<IAppActions> m_AppActionsCallbackInterfaces = new List<IAppActions>();
+        private readonly InputAction m_App_Submit;
+        private readonly InputAction m_App_Cancel;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "App".
+        /// </summary>
+        public struct AppActions
+        {
+            private @GameInput m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public AppActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "App/Submit".
+            /// </summary>
+            public InputAction @Submit => m_Wrapper.m_App_Submit;
+            /// <summary>
+            /// Provides access to the underlying input action "App/Cancel".
+            /// </summary>
+            public InputAction @Cancel => m_Wrapper.m_App_Cancel;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_App; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="AppActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(AppActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="AppActions" />
+            public void AddCallbacks(IAppActions instance)
+            {
+                if (instance == null || m_Wrapper.m_AppActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_AppActionsCallbackInterfaces.Add(instance);
+                @Submit.started += instance.OnSubmit;
+                @Submit.performed += instance.OnSubmit;
+                @Submit.canceled += instance.OnSubmit;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="AppActions" />
+            private void UnregisterCallbacks(IAppActions instance)
+            {
+                @Submit.started -= instance.OnSubmit;
+                @Submit.performed -= instance.OnSubmit;
+                @Submit.canceled -= instance.OnSubmit;
+                @Cancel.started -= instance.OnCancel;
+                @Cancel.performed -= instance.OnCancel;
+                @Cancel.canceled -= instance.OnCancel;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="AppActions.UnregisterCallbacks(IAppActions)" />.
+            /// </summary>
+            /// <seealso cref="AppActions.UnregisterCallbacks(IAppActions)" />
+            public void RemoveCallbacks(IAppActions instance)
+            {
+                if (m_Wrapper.m_AppActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="AppActions.AddCallbacks(IAppActions)" />
+            /// <seealso cref="AppActions.RemoveCallbacks(IAppActions)" />
+            /// <seealso cref="AppActions.UnregisterCallbacks(IAppActions)" />
+            public void SetCallbacks(IAppActions instance)
+            {
+                foreach (var item in m_Wrapper.m_AppActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_AppActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="AppActions" /> instance referencing this action map.
+        /// </summary>
+        public AppActions @App => new AppActions(this);
 
         // Gameplay
         private readonly InputActionMap m_Gameplay;
@@ -361,6 +521,28 @@ namespace DLSample.App
         /// Provides a new <see cref="GameplayActions" /> instance referencing this action map.
         /// </summary>
         public GameplayActions @Gameplay => new GameplayActions(this);
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "App" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="AppActions.AddCallbacks(IAppActions)" />
+        /// <seealso cref="AppActions.RemoveCallbacks(IAppActions)" />
+        public interface IAppActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "Submit" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnSubmit(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Cancel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnCancel(InputAction.CallbackContext context);
+        }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Gameplay" which allows adding and removing callbacks.
         /// </summary>

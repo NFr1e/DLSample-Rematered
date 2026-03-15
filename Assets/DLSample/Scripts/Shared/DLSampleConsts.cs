@@ -37,6 +37,8 @@ namespace DLSample.Shared
             public const int PRIORITY_SKIN_CHANGER = 2;
 
             public const int PRIORITY_INITIALIZER = 10;
+
+            public const int PRIORITY_STAIR_CONTROLLER = 11;
         }
     }
 }

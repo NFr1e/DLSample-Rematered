@@ -61,6 +61,8 @@ namespace DLSample.Gameplay.Stream
 
         public TickEvent RegisterTickEvent(TickEvent tickEvent)
         {
+            Debug.Log($"TickEvent[{tickEvent.Time},{tickEvent.Callback.Method.Name}] Registered");
+
             int index = _tickEvents.BinarySearch(tickEvent, Comparer<TickEvent>.Create((a, b) => a.Time.CompareTo(b.Time)));
 
             if (index < 0)

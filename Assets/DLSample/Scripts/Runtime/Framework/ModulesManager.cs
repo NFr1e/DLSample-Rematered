@@ -14,7 +14,10 @@ namespace DLSample.Framework
 
         public void Register<T>(T module) where T : IModule
         {
-            if (_isInitialized) return;
+            if (_isInitialized)
+            {
+                Debug.LogWarning($"{module.GetType().Name} is trying to registered in ModulesManage after its initialized");
+            }
 
             if (_typeMap.ContainsKey(typeof(T)))
             {
@@ -24,8 +27,6 @@ namespace DLSample.Framework
 
             _modules.Add(module);
             _typeMap[typeof(T)] = module;
-
-            Debug.Log($"[{GetType().Name}]: Module \'<color=orange>[{module.GetType().Name}]</color>\' Has been \'<color=red>REGISTERED</color>\'");
         }
 
         public void Init()
@@ -34,13 +35,17 @@ namespace DLSample.Framework
 
             HandleModuleRequires();
 
+            _isInitialized = true;
+        }
+
+        public void Start()
+        {
+            if (!_isInitialized) return;
+
             foreach (var module in _modules)
             {
-
-                Debug.Log($"[{GetType().Name}]: Module \'<color=orange>[{module.GetType().Name}]</color>\' Has been '<color=cyan>INITIALIZED</color>'");
                 module.OnInit();
             }
-            _isInitialized = true;
         }
 
         public void Update(float deltaTime)
@@ -67,15 +72,15 @@ namespace DLSample.Framework
             {
                 var interfaces = module.GetType().GetInterfaces();
 
-                foreach (var @interface in interfaces)
+                foreach (var i in interfaces)
                 {
-                    if (@interface.IsGenericType && @interface.GetGenericTypeDefinition() == typeof(IModuleRequire<>))
+                    if (i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IModuleRequire<>))
                     {
-                        Type targetType = @interface.GetGenericArguments()[0];
+                        Type targetType = i.GetGenericArguments()[0];
 
                         if (_typeMap.TryGetValue(targetType, out var dependency))
                         {
-                            MethodInfo setMethod = @interface.GetMethod("SetModule");
+                            MethodInfo setMethod = i.GetMethod("SetModule");
                             setMethod.Invoke(module, new object[] { dependency });
                         }
                         else

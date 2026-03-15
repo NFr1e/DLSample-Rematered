@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 using DLSample.Facility.Events;
-using System;
+
 
 namespace DLSample.Gameplay.Behaviours
 {
@@ -13,7 +14,7 @@ namespace DLSample.Gameplay.Behaviours
     }
 
     [RequireComponent(typeof(Collider),typeof(Rigidbody))]
-    public class PlayerDamager : GameplayComponentBase
+    public class PlayerDamager : GameplayObject
     {
         public GameplayPlayerMove player;
 
@@ -30,7 +31,6 @@ namespace DLSample.Gameplay.Behaviours
         {
             _evtBus = GameplayEntry.Instance.EventBus;
         }
-        protected override void OnExit() { }
 
         private void OnTriggerEnter(Collider other)
         {

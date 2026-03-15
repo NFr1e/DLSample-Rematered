@@ -6,9 +6,10 @@ namespace DLSample.Framework
     public interface IModule
     {
         /// <summary>
-        /// 优先级，越小越优先
+        /// 模块优先级，通过ModulesManager处理，优先处理小优先级模块
         /// </summary>
         int Priority { get; }
+
         void OnInit();
         void OnUpdate(float deltaTime);
         void OnShutdown();

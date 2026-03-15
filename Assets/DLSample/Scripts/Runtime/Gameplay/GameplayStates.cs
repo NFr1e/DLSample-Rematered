@@ -6,6 +6,7 @@ namespace DLSample.Gameplay.Phase
 {
     public class GameplayStates
     {
+        #region GameTime
         public class WaitingState : GameplayStateBase
         {
             public WaitingState(GameplayFSM fsm) : base(fsm) { }
@@ -95,5 +96,6 @@ namespace DLSample.Gameplay.Phase
                 _fsm.SetCurrentState<PreparingState>();
             }
         }
+        #endregion
     }
 }

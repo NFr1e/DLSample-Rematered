@@ -37,7 +37,10 @@ namespace DLSample.Gameplay.Stream
 
             _backtrack?.Unregister(this);
         }
-        public void OnUpdate(float _) { }
+        public void OnUpdate(float deltaTime) 
+        {
+            _timer?.Tick(deltaTime);
+        }
 
         private void OnStateChange(GameplayEventParams.GameplayStateChangeCtx ctx)
         {

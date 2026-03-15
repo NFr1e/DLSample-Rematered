@@ -3,6 +3,54 @@
     "name": "GameInput",
     "maps": [
         {
+            "name": "App",
+            "id": "11894058-3d05-4207-a5b1-05d52a3e78dc",
+            "actions": [
+                {
+                    "name": "Submit",
+                    "type": "Button",
+                    "id": "b2a994c4-633f-4f9a-a2a7-175e369a44f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "9bca2ec8-36fd-4143-b100-de7a201afc80",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "45b61c5f-ee5f-456e-a697-eccdcd8b1f5c",
+                    "path": "*/{Submit}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8869b97c-620a-4343-8879-863192762755",
+                    "path": "*/{Cancel}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Gameplay",
             "id": "014e2ccb-0f13-4dc2-9815-23daf3662b8f",
             "actions": [

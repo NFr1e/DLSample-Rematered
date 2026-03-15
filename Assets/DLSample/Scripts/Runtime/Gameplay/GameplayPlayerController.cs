@@ -55,6 +55,8 @@ namespace DLSample.Gameplay
         {
             SubscribeEvents();
             _backtrackablesHandler?.Register(this);
+
+            _mainPlayer.Ready();
         }
         public void OnShutdown()
         {

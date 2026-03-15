@@ -3,9 +3,10 @@ using DLSample.Facility.Events;
 
 namespace DLSample.App
 {
-    public static class AppEntry
+    public class AppEntry
     {
         public static EventBus EventBus { get; private set; }
+        public static AsyncEventBus AsyncEventBus { get; private set; }
         public static GameInput GameInput { get; private set; }
 
 
@@ -13,7 +14,10 @@ namespace DLSample.App
         private static void Enter()
         {
             EventBus = new EventBus();
+            AsyncEventBus = new AsyncEventBus();
             GameInput = new GameInput();
+
+            GameInput.App.Enable();
         }
     }
 }

@@ -4,7 +4,7 @@ using DLSample.Shared;
 
 namespace DLSample.Gameplay.Behaviours
 {
-    public class GameplayPlayerMove : MonoBehaviour, IPlayerMove
+    public class GameplayPlayerMove : GameplayObject, IPlayerMove
     {
         [SerializeField] private PlayerParams playerParams;
 

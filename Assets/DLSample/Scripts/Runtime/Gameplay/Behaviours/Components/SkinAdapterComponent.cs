@@ -3,7 +3,7 @@ using DLSample.Gameplay.Behaviours;
 
 namespace DLSample.Gameplay.Skin
 {
-    public class SkinAdapterComponent : GameplayComponentBase
+    public class SkinAdapterComponent : GameplayObject
     {
         [SerializeField] private GameplayPlayerMove playerMove;
         [SerializeField] private PlayerDamager playerDamager;
@@ -16,7 +16,7 @@ namespace DLSample.Gameplay.Skin
             _adapter = new GameplaySkinAdapter(playerMove, headContainer,  playerDamager);
             _adapter.Init();
 
-            ServiceLocator.WhenServicesReady(AddAdapter, typeof(SkinChanger));
+            GameplayEntry.Instance.ServiceLocator.WhenServicesReady(AddAdapter, typeof(SkinChanger));
         }
 
         protected override void OnExit()
@@ -27,7 +27,7 @@ namespace DLSample.Gameplay.Skin
 
         void AddAdapter()
         {
-            ServiceLocator.Get<SkinChanger>().AddAdapter(_adapter);
+            GameplayEntry.Instance.ServiceLocator.Get<SkinChanger>().AddAdapter(_adapter);
         }
     }
 }

@@ -5,9 +5,6 @@ namespace DLSample.Gameplay
 {
     public struct GameplayEventParams
     {
-        public struct OnEnterGameplayMsg : IEventArg { }
-        public struct OnExitGameplayMsg : IEventArg { }
-
         public struct WaitingGameRequest : IEventArg { }
         public struct PrepareGameRequest : IEventArg { }
         public struct StartGameRequest : IEventArg { }

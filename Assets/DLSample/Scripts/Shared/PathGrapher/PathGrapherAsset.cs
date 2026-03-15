@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 using DLSample.Shared;
-using Sirenix.OdinInspector;
 using System;
+
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
 
 namespace DLSample.Editor.PathGrapher
 {
@@ -30,9 +33,13 @@ namespace DLSample.Editor.PathGrapher
         [SerializeReference]
         public List<IPathEvent> globalEvents = new();
 
+#if ODIN_INSPECTOR
         [ReadOnly]
+#endif
         public List<Waypoint> generatedWaypoints = new();
+#if ODIN_INSPECTOR
         [ReadOnly]
+#endif
         public List<PathSegment> generatedSegments = new();
     }
 }
