@@ -5004,6 +5004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3876014408106139498}
   - component: {fileID: 4000935543051311137}
+  - component: {fileID: 3065749085975016526}
   m_Layer: 0
   m_Name: CrownCheckpoint
   m_TagString: Untagged
@@ -5045,6 +5046,20 @@ MonoBehaviour:
   mainPlayerRespawnTransform: {fileID: 599833940001533332}
   visulize: 0
   crown: {fileID: 3037734904798774893}
+--- !u!114 &3065749085975016526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351400452203320888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf835dc423ff16243ba72affae81b304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviour: {fileID: 0}
+  autoSetTransform: 0
 --- !u!1 &8753948880376529011
 GameObject:
   m_ObjectHideFlags: 0

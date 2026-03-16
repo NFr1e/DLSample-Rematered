@@ -38,4 +38,20 @@ DLSample内置编辑器拓展，计划实现完整便捷的关卡设计工作流
 3. 可选模块，即非必须的模块(如CameraFollowerController)，通过实现接口```IModuleRequire<T>```,由ModulesManager通过反射自动注入模块。
 
 ## 三.教程文档✨
-以后再说...
+### [一. 创建关卡](./DLSampleDoc/1_CreateLevel/README.md)
+
+1. 手动创建
+2. 快捷创建(TODO)
+
+### [二. 关卡基础配置](./DLSampleDoc/2_LevelConfiguration/README.md)
+
+1. LevelData配置
+2. 如何填入BeatmapData？
+3. PathGrapherAsset配置
+4. 创建基础关卡
+
+### [三. Player设置]()
+
+1. 关卡基础配置
+2. Player移动
+3. Player死亡

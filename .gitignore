@@ -75,4 +75,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # PaidPlugins
-/[Aa]ssets/[Pp]lugins/Sirenix
+/[Aa]ssets/Plugins/Sirenix/

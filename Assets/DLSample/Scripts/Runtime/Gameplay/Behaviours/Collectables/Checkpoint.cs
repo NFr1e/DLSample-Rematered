@@ -1,8 +1,13 @@
 using UnityEngine;
 using DLSample.Gameplay.Stream;
+using DLSample.Facility.Events;
 
 namespace DLSample.Gameplay.Behaviours
 {
+    public struct OnConsumeCheckpoint : IEventArg 
+    {
+        public Checkpoint checkpoint;
+    }
     public class Checkpoint : GameplayObject
     {
         [SerializeField] protected double checkTime = 0;
@@ -13,7 +18,9 @@ namespace DLSample.Gameplay.Behaviours
         protected bool _consumed = false;
 
         private GameplayTimer _timer;
-        protected GameplayTimer.TickEvent _checkTickEvent;
+        private GameplayTimer.TickEvent _checkTickEvent;
+
+        private OnConsumeCheckpoint _consumedEvent = new();
 
         public Transform MainPlayerTransform => mainPlayerRespawnTransform;
 
@@ -41,6 +48,7 @@ namespace DLSample.Gameplay.Behaviours
         public virtual void Consume()
         {
             _consumed = true;
+            GameplayEntry.Instance.EventBus.Invoke(this, _consumedEvent);
         }
 
         private void OnDrawGizmos()

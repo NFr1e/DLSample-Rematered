@@ -1,6 +1,7 @@
+#if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
+#endif
+
 using UnityEditor;
 using UnityEngine;
 
@@ -9,10 +10,11 @@ namespace DLSample.Editor.PathGrapher
     public class PathGrapherTransformMover : MonoBehaviour
     {
         [SerializeField] private PathGrapherBehaviour behaviour;
-        [SerializeField] private bool autoSetTransform = false;
+        [SerializeField] private bool autoSetTransformByTime = false;
 
         private double time = 0;
 
+#if ODIN_INSPECTOR
         [OnInspectorGUI]
         public void DrawInspector()
         {
@@ -20,11 +22,11 @@ namespace DLSample.Editor.PathGrapher
             time = EditorGUILayout.DoubleField("Time", time);
             if (EditorGUI.EndChangeCheck())
             {
-                if (autoSetTransform)
+                if (autoSetTransformByTime)
                     transform.position = GetPosition();
             }
 
-            if (autoSetTransform) return;
+            if (autoSetTransformByTime) return;
 
             GUILayout.BeginHorizontal();
 
@@ -56,4 +58,5 @@ namespace DLSample.Editor.PathGrapher
             return PathMappingUtility.GetRotationAtTime(time, behaviour.asset.pathData);
         }
     }
+#endif
 }

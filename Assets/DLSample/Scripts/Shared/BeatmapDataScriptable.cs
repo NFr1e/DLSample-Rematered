@@ -26,5 +26,11 @@ namespace DLSample.Shared
         [SerializeField] private List<Beat> beats;
 
         public IReadOnlyList<Beat> Beats => beats.AsReadOnly();
+
+        public void SetBeats(IReadOnlyList<Beat> beats)
+        {
+            this.beats.Clear();
+            this.beats.AddRange(beats);
+        }
     }
 }

@@ -6,14 +6,27 @@ using DLSample.Facility.Events;
 using DLSample.Facility;
 using DLSample.Framework;
 
+#if ODIN_INSPECTOR
+using Sirenix.OdinInspector;
+#endif
+
 namespace DLSample.Gameplay.Behaviours
 {
     public class GameplayManagerComponent : GameplayObject
     {
+#if ODIN_INSPECTOR
+        [Title("Configs")]
+#endif
         [SerializeField] private LevelDataScriptable levelData;
 
+#if ODIN_INSPECTOR
+        [Title("Player")]
+#endif
         [SerializeField] private GameplayPlayerMove mainPlayer;
 
+#if ODIN_INSPECTOR
+        [Title("Stream")]
+#endif
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip audioClip;
 

@@ -18,6 +18,10 @@ namespace DLSample.Shared
             public const int CREATE_MENU_PATHGRAPHERASSET_ORDER = 3;
 
             //Global
+            public const string CREATE_MENU_PANELS_MENU_NAME = "DLSample/Config/UI/PanelsData";
+            public const string CREATE_MENU_PANELS_FILE_NAME = "UIPanelsData";
+            public const int CREATE_MENU_PANELS_ORDER = 1;
+
             public const string CREATE_MENU_SKINDATA_MENU_NAME = "DLSample/Config/SkinData";
             public const string CREATE_MENU_SKINDATA_FILE_NAME = "SkinData";
             public const int CREATE_MENU_SKINDATA_ORDER = 1;
@@ -32,6 +36,7 @@ namespace DLSample.Shared
             public const int PRIORITY_CHECKPOINT_HANDLER = 1;
             public const int PRIORITY_SOUNDTRACK_DIRECTOR = 1;
             public const int PRIORITY_TIMER_DIRECTOR = 1;
+            public const int PRIORITY_UI_HANDLER = 1;
 
             public const int PRIORITY_SKIN_HANDLER = 2;
             public const int PRIORITY_SKIN_CHANGER = 2;

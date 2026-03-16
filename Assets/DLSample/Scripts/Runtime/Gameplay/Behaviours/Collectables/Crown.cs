@@ -55,7 +55,8 @@ namespace DLSample.Gameplay.Behaviours
                 crownIcon.transform.position,
             };
 
-            effect.transform.DOPath(path, duration)
+            effect.transform
+                .DOPath(path, duration, PathType.Linear)
                 .SetEase(Ease.InQuad)
                 .OnComplete(() =>
                 {
