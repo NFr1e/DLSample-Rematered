@@ -6,21 +6,26 @@ using DLSample.Gameplay.Phase;
 using Cysharp.Threading.Tasks;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using DLSample.Facility.Input;
+using System;
 
 namespace DLSample.Gameplay
 {
     public class GameplayInputHandler : IModule
     {
-        public int Priority => DLSampleConsts.Gameplay.PRIORITY_INPUT_HANDLER;
+        int IModule.Priority => DLSampleConsts.Gameplay.PRIORITY_INPUT_HANDLER;
 
         private readonly GameplayPlayerController _playerController;
 
         private readonly EventBus _evtBus;
         private GameInput _input;
+        private InputManager _inputManager;
 
         private GameplayStateBase _currentState;
         private readonly GameplayEventParams.StartGameRequest _startRequest = new();
         private readonly GameplayEventParams.PauseGameRequest _pauseRequest = new();
+
+        private InputTask _pauseInputTask = new();
 
         public GameplayInputHandler(EventBus eventBus, GameplayPlayerController playerCtrl)
         {
@@ -31,8 +36,10 @@ namespace DLSample.Gameplay
         public void OnInit()
         {
             _input = AppEntry.GameInput;
+            _inputManager = AppEntry.InputManager;
 
             _input.Gameplay.Enable();
+            _pauseInputTask = new(OnPauseInputed, _inputManager.GetInputLayer<InputLayers.GameplayInputLayer>());
 
             SubscribeInput();
             SubscribeEvents();
@@ -58,12 +65,12 @@ namespace DLSample.Gameplay
         private void SubscribeInput()
         {
             _input.Gameplay.PlayerInput.performed += OnPlayerInputed;
-            _input.Gameplay.PauseInput.performed += OnPauseInputed;
+            _inputManager.RegisterInputTask(_input.Gameplay.PauseInput, _pauseInputTask);
         }
         private void UnsubscribeInput()
         {
             _input.Gameplay.PlayerInput.performed -= OnPlayerInputed;
-            _input.Gameplay.PauseInput.performed -= OnPauseInputed;
+            _inputManager.UnregisterInputTask(_input.Gameplay.PauseInput, _pauseInputTask);
         }
         private void OnStateChange(GameplayEventParams.GameplayStateChangeCtx ctx)
         {

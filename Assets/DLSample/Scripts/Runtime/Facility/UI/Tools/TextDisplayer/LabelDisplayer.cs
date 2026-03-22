@@ -17,4 +17,11 @@ namespace DLSample.Facility.UI
             label.SetText(content);
         }
     }
+    public static class LableDisplayerExtensions
+    {
+        public static void DOText(this LabelDisplayer displayer, string content)
+        {
+            
+        }
+    }
 }

@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using DLSample.Facility.UI;
 using UnityEngine;
 
-public class LevelNameView : MonoBehaviour
+namespace DLSample.Gameplay.Behaviours.UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelNameView : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private LabelDisplayer levelNameLabel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private GameplayResulter _resulter;
+
+        private void Start()
+        {
+            _resulter = GameplayEntry.Instance.ServiceLocator.Get<GameplayResulter>();
+
+            if(_resulter is not null)
+            {
+                levelNameLabel.SetText(_resulter.LevelData.LevelName);
+            }
+        }
     }
 }

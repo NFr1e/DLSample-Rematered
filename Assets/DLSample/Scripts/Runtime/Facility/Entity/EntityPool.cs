@@ -103,12 +103,10 @@ namespace DLSample.Facility.EnityFramework
         {
             foreach (var instance in _pooledObjects)
             {
-                GameObject.Destroy(instance.gameObject);
+                if(instance)
+                    GameObject.Destroy(instance.gameObject);
             }
-            if (_container.gameObject != null)
-            {
-                GameObject.Destroy(_container.gameObject);
-            }
+
             _pooledObjects.Clear();
             _unpooledObjects.Clear();
 

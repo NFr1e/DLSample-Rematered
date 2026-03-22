@@ -4,6 +4,19 @@ using DLSample.Facility.Events;
 
 namespace DLSample.Gameplay.Behaviours
 {
+    public enum StairStatus
+    {
+        Landing,
+        Landed,
+        Rising,
+        Rised
+    }
+
+    public struct StairEventArgs : IEventArg 
+    { 
+        public StairStatus Status { get; set; }
+    }
+
     public class StairComponent : GameplayObject
     {
         [SerializeField] private Transform stairTransform;
@@ -11,11 +24,15 @@ namespace DLSample.Gameplay.Behaviours
         [SerializeField] private Vector3 landPosition = new(0, -2, 0);
         [SerializeField] private GameObject landEffect;
 
+        private StairStatus _status = StairStatus.Rised;
+
         private StairController _controller;
 
         private EventBus _eventBus;
         private readonly GameplayEventParams.PrepareGameRequest _prepareGameRequest = new();
         private readonly GameplayEventParams.WaitingGameRequest _waitingGameRequest = new();
+
+        private StairEventArgs _eventArgs = new();
 
         private Transform _playerOriginalParent;
         private Vector3 _originalPosition;
@@ -23,29 +40,26 @@ namespace DLSample.Gameplay.Behaviours
 
         private Tween stairTween;
 
-        private bool _isLanding = false;
-        private bool _isRising = false;
-
         protected override void OnInit()
         {
-            _originalPosition = stairTransform.transform.position;
-            _playerOriginEuler = player.PlayerParams.Directions.StartRotation().eulerAngles - new Vector3(0, -90, 0);
-            _playerOriginalParent = player.transform.parent;
+            GetOriginalArgs();
 
-            _controller = new StairController(this, player.transform, _playerOriginEuler);
+            _controller = new StairController(player.transform, _playerOriginEuler);
             _eventBus = GameplayEntry.Instance.EventBus;
+
+            _eventBus.Subscribe<StairRequests.LandRequest>(Land);
+            _eventBus.Subscribe<StairRequests.RiseRequest>(Rise);
         }
         protected override void OnStart()
         {
             GameplayEntry.Instance.ModulesManager.Register(_controller);
         }
 
-        public void Land()
+        #region Animator
+        public void Land(StairRequests.LandRequest _)
         {
-            if (_isLanding) return;
-
-            _isRising = false;
-            _isLanding = true;
+            if (_status is StairStatus.Landing) return;
+            _status = StairStatus.Landing;
 
             player.transform.SetParent(stairTransform);
 
@@ -58,12 +72,10 @@ namespace DLSample.Gameplay.Behaviours
                 .Join(player.transform.DORotateQuaternion(player.PlayerParams.Directions.StartRotation(), 0.8f))
                 .OnComplete(OnLanded);
         }
-        public void Rise()
+        public void Rise(StairRequests.RiseRequest _)
         {
-            if (_isRising) return;
-
-            _isLanding = false;
-            _isRising = true;
+            if (_status is StairStatus.Rising) return;
+            _status = StairStatus.Rising;
 
             _eventBus.Invoke(this, _waitingGameRequest);
 
@@ -84,11 +96,27 @@ namespace DLSample.Gameplay.Behaviours
 
             _eventBus.Invoke(this, _prepareGameRequest);
 
-            _isLanding = false;
+            SetStatus(StairStatus.Landed);
         }
         private void OnRised()
         {
-            _isRising = false;
+            SetStatus(StairStatus.Rised);
+        }
+        #endregion
+
+        private void GetOriginalArgs()
+        {
+            _originalPosition = stairTransform.transform.position;
+            _playerOriginEuler = player.PlayerParams.Directions.StartRotation().eulerAngles - new Vector3(0, -90, 0);
+            _playerOriginalParent = player.transform.parent;
+        }
+
+        private void SetStatus(StairStatus status)
+        {
+            _status = status;
+            _eventArgs.Status = _status;
+
+            _eventBus.Invoke(this, _eventArgs);
         }
     }
 }

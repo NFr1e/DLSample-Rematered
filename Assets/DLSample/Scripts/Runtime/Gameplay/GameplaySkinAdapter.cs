@@ -7,7 +7,7 @@ namespace DLSample.Gameplay.Skin
     {
         public PlayerDamager _damager;
 
-        public GameplaySkinAdapter(IPlayerMove player, Transform headContainer, PlayerDamager damager) : base(player, headContainer) 
+        public GameplaySkinAdapter(IPlayerMove player, Transform headContainer, BacktrackablesHandler backtrackHandler, PlayerDamager damager) : base(player, headContainer, backtrackHandler) 
         { 
             _damager = damager;
         }

@@ -45,6 +45,7 @@ namespace DLSample.Gameplay
                 case GameplayStates.PreparingState:
                     _ = await _uiManager.OpenPanel(_mapper.PreparePanelId);
                     break;
+
                 case GameplayStates.OverState:
                     if(_checkpointHandler is not null)
                     {
@@ -57,11 +58,14 @@ namespace DLSample.Gameplay
 
                     _ = await _uiManager.OpenPanel(_mapper.OverPanelId);
                     break;
+
                 case GameplayStates.PauseState:
                     _ = await _uiManager.OpenPanel(_mapper.PausePanelId);
                     break;
+
                 case GameplayStates.WaitingState:
                     break;
+
                 default:
                     await _uiManager.CloseAllFullscreenPanel();
                     break;

@@ -1,6 +1,6 @@
 using UnityEngine;
 using DLSample.Shared.UI;
-using DLSample.Facility.UI;
+using DLSample.App;
 
 namespace DLSample.Gameplay.Behaviours
 {
@@ -8,21 +8,18 @@ namespace DLSample.Gameplay.Behaviours
     {
         [SerializeField] private UIPanelsDataScriptable panelsConfig;
         [SerializeField] private Camera uiCamera;
-        [SerializeField] private Transform uiContainer;
 
         [SerializeField] private GameplayUIMapper gameplayUIMapper;
 
-        private UIElementManager _uiManager;
         private GameplayUIHandler _handler;
 
         protected override void OnInit()
         {
-            _uiManager ??= new();
-            _handler = new(GameplayEntry.Instance.EventBus, GameplayEntry.Instance.ServiceLocator, _uiManager, gameplayUIMapper);
+            var uiManager = AppEntry.UIManager;
+            _handler = new(GameplayEntry.Instance.EventBus, GameplayEntry.Instance.ServiceLocator, uiManager, gameplayUIMapper);
 
-            _uiManager.SetupConfigs(panelsConfig);
-            _uiManager.SetupCamera(uiCamera);
-            _uiManager.SetupContainers(uiContainer, uiContainer);
+            uiManager.SetupConfigs(panelsConfig);
+            uiManager.SetupCamera(uiCamera);
         }
         protected override void OnStart()
         {

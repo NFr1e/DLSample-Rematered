@@ -4,6 +4,7 @@ namespace DLSample.Shared
     {
         public struct Editor
         {
+            #region CreateMenu
             //Level
             public const string CREATE_MENU_LEVELDATA_MENU_NAME = "DLSample/Level/LevelData";
             public const string CREATE_MENU_LEVELDATA_FILE_NAME = "LevelData";
@@ -25,9 +26,11 @@ namespace DLSample.Shared
             public const string CREATE_MENU_SKINDATA_MENU_NAME = "DLSample/Config/SkinData";
             public const string CREATE_MENU_SKINDATA_FILE_NAME = "SkinData";
             public const int CREATE_MENU_SKINDATA_ORDER = 1;
+            #endregion
         }
         public struct Gameplay
         {
+            #region Module Priority
             public const int PRIORITY_BACKTRACKABLES_HANDLER = 0;
 
             public const int PRIORITY_PLAYER_CONTROLLER = 1;
@@ -44,6 +47,22 @@ namespace DLSample.Shared
             public const int PRIORITY_INITIALIZER = 10;
 
             public const int PRIORITY_STAIR_CONTROLLER = 11;
+            #endregion
+
+            #region BacktrackPriority
+            public const int BACKTRACK_PRIORITY_TIMER = 0;
+            public const int BACKTRACK_PRIORITY_PLAYER_CONTROLLER = 0;
+            public const int BACKTRACK_PRIORITY_SOUNDTRACK_DIRECTOR = 0;
+            public const int BACKTRACK_PRIORITY_GEM = 10;
+            public const int BACKTRACK_PRIORITY_CAMERA_FOLLOWER = 10;
+            public const int BACKTRACK_PRIORITY_SKIN_ADAPTER = 20;
+            #endregion
+        }
+        public struct Input
+        {
+            public const int INPUT_PRIORITY_SYSTEM = 0;
+            public const int INPUT_PRIORITY_UI = 10;
+            public const int INPUT_PRIORITY_GAMEPLAY = 20;
         }
     }
 }

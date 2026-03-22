@@ -51,6 +51,8 @@ namespace DLSample.Gameplay
         private bool _started = false;
         private bool _disposed = false;
 
+        public bool IsInitialized => _initialized;
+
         private void Awake() => OnInit();
         private void Start() => OnStart();
         private void Update() => OnUpdate();
@@ -121,9 +123,16 @@ namespace DLSample.Gameplay
         #region PublicAPI
         public void RegisterGameplayObject(GameplayObject gameplayObject)
         {
-            if (_gameplayObjects.Contains(gameplayObject)) return;
+            if (!_started)
+            {
+                if (_gameplayObjects.Contains(gameplayObject)) return;
 
-            _gameplayObjects.Add(gameplayObject);
+                _gameplayObjects.Add(gameplayObject);
+            }
+            else
+            {
+                gameplayObject.DoStart();
+            }
         }
         #endregion
     }

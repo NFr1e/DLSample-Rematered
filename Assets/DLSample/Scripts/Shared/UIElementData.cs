@@ -25,5 +25,19 @@ namespace DLSample.Shared.UI
 
         [SerializeField] string _itemId;
         [SerializeField] T _item;
+
+        public readonly override bool Equals(object obj)
+        {
+            if(obj is UIElementData<T> element)
+            {
+                return element.ItemId == ItemId;
+            }
+
+            return false;
+        }
+        public readonly override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

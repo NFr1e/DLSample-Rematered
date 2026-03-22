@@ -12,6 +12,8 @@ namespace DLSample.Gameplay
 
         private readonly List<IBacktrackable> instances = new();
 
+        public double CurrentBacktrackTime { get; private set; }
+
         private EventBus _evtBus;
 
         public void OnInit()
@@ -32,9 +34,10 @@ namespace DLSample.Gameplay
 
         private void OnCheckpointed(CheckpointEventParams.OnCheckpointed ctx)
         {
+            CurrentBacktrackTime = ctx.CheckTime;
+
             foreach (var instance in instances.ToArray())
             {
-                instance.BacktrackTime = ctx.CheckTime;
                 instance.GetBacktrackState();
             }
         }

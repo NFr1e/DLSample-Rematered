@@ -14,9 +14,7 @@ namespace DLSample.Gameplay.Stream
 
         private readonly EventBus _evtBus;
 
-        public int BacktrackPriority => 100;
-        public double BacktrackTime { get; set; }
-
+        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_TIMER;
 
         public GameplayTimerDirector(EventBus eventBus, GameplayTimer timer, BacktrackablesHandler backtrack)
         {
@@ -55,10 +53,9 @@ namespace DLSample.Gameplay.Stream
             }
         }
 
-        public void GetBacktrackState() { }
         public void Backtrack()
         {
-            _timer.Seek(BacktrackTime);
+            _timer.Seek(_backtrack.CurrentBacktrackTime);
         }
     }
 }

@@ -59,11 +59,7 @@ namespace DLSample.Gameplay.Stream
         {
             if (IsPlaying) return;
 
-            if (_fadeoutTween != null && _fadeoutTween.active && _fadeoutTween.IsPlaying())
-            {
-                _fadeoutTween?.Kill();
-                _fadeoutTween = _audioSource.DOFade(1, 0.3f);
-            }
+            RestoreVolume();
 
             _playable.Play();
             IsPlaying = true;
@@ -84,7 +80,12 @@ namespace DLSample.Gameplay.Stream
         {
             IsPlaying = false;
             _fadeoutTween?.Kill();
-            _fadeoutTween = _audioSource.DOFade(0, 3f);
+            _fadeoutTween = _audioSource.DOFade(0, 3f).SetLink(_audioSource.gameObject);
+        }
+        private void RestoreVolume()
+        {
+            _fadeoutTween?.Kill();
+            _fadeoutTween = _audioSource.DOFade(1, 0.3f);
         }
     }
 }

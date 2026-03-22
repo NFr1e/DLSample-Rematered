@@ -203,8 +203,7 @@ namespace DLSample.Gameplay
         #endregion
 
         #region Backtrack
-        public int BacktrackPriority => 100;
-        public double BacktrackTime { get; set; }
+        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_PLAYER_CONTROLLER;
 
         private struct BacktrackStates
         {

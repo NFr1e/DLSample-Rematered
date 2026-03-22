@@ -9,6 +9,7 @@ namespace DLSample.Gameplay.Behaviours
         private void Awake()
         {
             GameplayEntry.Instance.RegisterGameplayObject(this);
+
             OnInit();
         }
         private void OnDestroy()

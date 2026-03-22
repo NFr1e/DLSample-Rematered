@@ -53,14 +53,17 @@ namespace DLSample.Gameplay.Behaviours.Skin
         }
         public override void OnDetach()
         {
+            _landEffectPool?.Dispose();
+            _obstacledEffectPool?.Dispose();
+
             if (_headInstance)
                 Destroy(_headInstance);
 
             if (_tailContainer)
                 Destroy(_tailContainer.gameObject);
 
-            _landEffectPool?.Dispose();
-            _obstacledEffectPool?.Dispose();
+            if (_effectsContainer)
+                Destroy(_effectsContainer.gameObject);
         }
 
         public override void OnStartMove(PlayerMovingArgs arg)
@@ -132,7 +135,7 @@ namespace DLSample.Gameplay.Behaviours.Skin
 
             _tailInstance.position = (_tailStartPos + headPosition) / 2;
         }
-        private async void PlayShotParticle(EntityPool<ShotParticleEffect> pool, Vector3 pos, Quaternion rotation, float lifeTime)
+        protected async void PlayShotParticle(EntityPool<ShotParticleEffect> pool, Vector3 pos, Quaternion rotation, float lifeTime)
         {
             var effect = pool.Get();
 

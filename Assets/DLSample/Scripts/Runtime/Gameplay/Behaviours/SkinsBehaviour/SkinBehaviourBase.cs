@@ -11,7 +11,7 @@ namespace DLSample.Gameplay.Behaviours.Skin
 
         public virtual void OnReset()
         {
-
+            Debug.Log($"{gameObject.name} : I'm Resetting!");
         }
 
         public virtual void OnStartMove(PlayerMovingArgs arg)

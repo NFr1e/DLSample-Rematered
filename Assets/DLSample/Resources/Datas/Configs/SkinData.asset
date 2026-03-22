@@ -15,4 +15,6 @@ MonoBehaviour:
   defaultSkin:
     skinId: skin.default
     skinPrefab: {fileID: 6241464190717227595, guid: f7025cb8edbf1b34dac72d51e25791eb, type: 3}
-  skins: []
+  skins:
+  - skinId: skin.headphone
+    skinPrefab: {fileID: 9126709236036954848, guid: ad503369a4777fb418a91f74fbab491c, type: 3}

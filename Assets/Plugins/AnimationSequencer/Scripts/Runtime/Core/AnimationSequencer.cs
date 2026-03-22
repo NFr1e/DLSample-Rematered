@@ -484,7 +484,7 @@ namespace BrunoMikoski.AnimationSequencer
         {
             var tcs = new TaskCompletionSource<bool>();
 
-            Sequence sequence = GenerateSequence();
+            Sequence sequence = GenerateSequence().SetTarget(this);
 
             sequence.OnComplete(() =>
             {

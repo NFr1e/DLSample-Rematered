@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DLSample.Facility.UI;
+using DG.Tweening;
 
 namespace DLSample.Gameplay.Behaviours.UI
 {
@@ -12,9 +11,42 @@ namespace DLSample.Gameplay.Behaviours.UI
         [SerializeField] private LabelDisplayer percentageLabel;
         [SerializeField] private LabelDisplayer gemLabel;
 
+        private GameplayResulter _resulter;
+        private Tween _sliderTween;
+
+        private void Awake()
+        {
+            percentageSlider.minValue = 0;
+            percentageSlider.maxValue = 100;
+        }
         private void Start()
         {
-            
+            _resulter = GameplayEntry.Instance.ServiceLocator.Get<GameplayResulter>();
+            Display();
+        }
+        private void OnDestroy()
+        {
+            _resulter = null;
+            _sliderTween = null;
+        }
+
+        private void Display()
+        {
+            if (_resulter is not null)
+            {
+
+                if (percentageSlider)
+                {
+                    _sliderTween?.Kill();
+                    _sliderTween = percentageSlider.DOValue(_resulter.GetPercentage(), 1f).SetEase(Ease.OutExpo);
+                }
+
+                if (percentageLabel.label)
+                    percentageLabel.SetText($"{_resulter.GetPercentage()}%");
+
+                if (gemLabel.label)
+                    gemLabel.SetText($"{_resulter.GetGemsCount()}/{_resulter.LevelData.GemCount}");
+            }
         }
     }
 }

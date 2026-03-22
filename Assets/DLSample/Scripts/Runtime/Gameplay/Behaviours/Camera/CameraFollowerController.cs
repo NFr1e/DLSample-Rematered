@@ -1,6 +1,7 @@
 using DLSample.Gameplay.Phase;
 using DLSample.Facility.Events;
 using DLSample.Framework;
+using DLSample.Shared;
 
 namespace DLSample.Gameplay.Behaviours
 {
@@ -64,9 +65,7 @@ namespace DLSample.Gameplay.Behaviours
         }
 
         #region Backtrack
-        public int BacktrackPriority => 90;
-        public double BacktrackTime { get; set; }
-        public void GetBacktrackState() { }
+        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_CAMERA_FOLLOWER;
         public void Backtrack()
         {
             _follower.FocusTarget();

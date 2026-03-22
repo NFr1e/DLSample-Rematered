@@ -1,34 +1,43 @@
 using Cysharp.Threading.Tasks;
 using DLSample.App;
-using DLSample.Facility.Events;
-using DLSample.Framework;
-using DLSample.Gameplay.Behaviours;
-using DLSample.Gameplay.Phase;
 using DLSample.Shared;
+using DLSample.Framework;
+using DLSample.Facility.Events;
+using DLSample.Facility.Input;
+using DLSample.Gameplay.Phase;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace DLSample.Gameplay
 {
+    public struct StairRequests
+    {
+        public struct RiseRequest : IEventArg { }
+        public struct LandRequest : IEventArg { }
+    }
     public class StairController : IModule
     {
         public int Priority => DLSampleConsts.Gameplay.PRIORITY_STAIR_CONTROLLER;
 
-        private readonly StairComponent _stair;
         private readonly Transform _player;
         private readonly Vector3 _playerOriginRotation;
 
-        private GameInput _gameInput;
         private EventBus _evtBus;
+        private GameInput _gameInput;
+        private InputManager _inputManager;
 
         private GameplayStateBase _currentState;
 
         private readonly GameplayEventParams.WaitingGameRequest _waitingGameRequest = new();
 
-        public StairController(StairComponent stair, Transform player, Vector3 playerOriginalRotation)
+        private readonly StairRequests.RiseRequest _riseRequest = new();
+        private readonly StairRequests.LandRequest _landRequest = new();
+
+        private InputTask _playerInputTask, _cancelInputTask;
+
+        public StairController(Transform player, Vector3 playerOriginalRotation)
         {
-            _stair = stair;
             _player = player;
             _playerOriginRotation = playerOriginalRotation;
         }
@@ -36,21 +45,26 @@ namespace DLSample.Gameplay
         public void OnInit()
         {
             _gameInput = AppEntry.GameInput;
+            _inputManager = AppEntry.InputManager;
             _evtBus = GameplayEntry.Instance.EventBus;
 
             _evtBus.Subscribe<GameplayEventParams.GameplayStateChangeCtx>(OnStateChange);
-            _gameInput.Gameplay.PlayerInput.performed += OnPlayerInputed;
-            _gameInput.App.Cancel.performed += OnCancelInputed;
+
+            _playerInputTask = new(OnPlayerInputed, _inputManager.GetInputLayer<InputLayers.GameplayInputLayer>());
+            _cancelInputTask = new(OnCancelInputed, _inputManager.GetInputLayer<InputLayers.GameplayInputLayer>());
+
+            _inputManager.RegisterInputTask(_gameInput.Gameplay.PlayerInput, _playerInputTask);
+            _inputManager.RegisterInputTask(_gameInput.App.Cancel, _cancelInputTask);
 
             _evtBus.Invoke(this, _waitingGameRequest);
-
-            _player.eulerAngles = _playerOriginRotation; // 避免状态竞争所以出此下策将角度初始化写在这...
+            _player.eulerAngles = _playerOriginRotation;
         }
         public void OnShutdown()
         {
             _evtBus.Unsubscribe<GameplayEventParams.GameplayStateChangeCtx>(OnStateChange);
-            _gameInput.Gameplay.PlayerInput.performed -= OnPlayerInputed;
-            _gameInput.App.Cancel.performed -= OnCancelInputed;
+
+            _inputManager.UnregisterInputTask(_gameInput.Gameplay.PlayerInput, _playerInputTask);
+            _inputManager.UnregisterInputTask(_gameInput.App.Cancel, _cancelInputTask);
         }
         public void OnUpdate(float deltaTime) { }
 
@@ -62,11 +76,12 @@ namespace DLSample.Gameplay
         private async void OnPlayerInputed(InputAction.CallbackContext ctx)
         {
             await UniTask.Yield();
+
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
 
             if (_currentState is GameplayStates.WaitingState)
             {
-                _stair.Land();
+                _evtBus.Invoke<StairRequests.LandRequest>(this, _landRequest);
             }
         }
         private async void OnCancelInputed(InputAction.CallbackContext ctx)
@@ -74,10 +89,11 @@ namespace DLSample.Gameplay
             await UniTask.Yield();
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
 
-            if(_currentState is GameplayStates.PreparingState or GameplayStates.WaitingState)
+            if (_currentState is GameplayStates.PreparingState or GameplayStates.WaitingState)
             {
-                _stair.Rise();
+                _evtBus.Invoke(this, _riseRequest);
             }
         }
     }
 }
+

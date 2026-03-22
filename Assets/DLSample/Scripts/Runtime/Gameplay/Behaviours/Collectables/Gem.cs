@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using DLSample.Facility;
+using DLSample.Shared;
 
 namespace DLSample.Gameplay.Behaviours
 {
@@ -17,19 +18,14 @@ namespace DLSample.Gameplay.Behaviours
         private GameObject _currentEffectInstance;
         private BacktrackablesHandler _backtrackablesHandler;
 
-        private void Awake()
+        protected override void OnInit()
         {
             IsCollected = false;
         }
-        protected override void OnInit()
-        {
-            _backtrackablesHandler = GameplayEntry.Instance.ServiceLocator.Get<BacktrackablesHandler>();
-
-            RegisterBacktrack();
-        }
         protected override void OnStart()
         {
-
+            _backtrackablesHandler = GameplayEntry.Instance.ServiceLocator.Get<BacktrackablesHandler>();
+            RegisterBacktrack();
         }
         protected override void OnExit()
         {
@@ -58,11 +54,7 @@ namespace DLSample.Gameplay.Behaviours
         }
 
         #region Backtrack
-        public int BacktrackPriority => 5;
-        public double BacktrackTime { get; set; }
-
-        public void GetBacktrackState() { }
-
+        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_GEM;
         public void Backtrack()
         {
             IsCollected = false;
@@ -73,11 +65,11 @@ namespace DLSample.Gameplay.Behaviours
 
         private void RegisterBacktrack()
         {
-            _backtrackablesHandler?.Register(this);
+            _backtrackablesHandler.Register(this);
         }
         private void UnregisterBacktrack()
         {
-            _backtrackablesHandler?.Unregister(this);
+            _backtrackablesHandler.Unregister(this);
         }
         #endregion
     }

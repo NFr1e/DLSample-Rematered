@@ -4,7 +4,7 @@
 
 DLSample提供了创建关卡的快捷方式，当然也可以根据自己的需求手动创建关卡。
 
-## 快捷创建 ✨
+## 快捷创建(Rescripting) ✨
 1. 找到Unity顶部工具栏中的DLSample，点击CreateLevel
 2. 出现命名窗口，在其中填入你的关卡名称，然后点击OK
 3. 在接下来弹出的窗口中选择需要保存关卡的路径，点击OK
@@ -15,3 +15,5 @@ DLSample提供了创建关卡的快捷方式，当然也可以根据自己的需
 2. 进入刚刚创建的文件夹，单击鼠标右键，找到 Create -> Scene， 同样，为场景命名。
 ### 2. 创建关卡配置文件
 1. 在1.1创建的文件夹下，右键，找到Create -> DLSample -> Level -> ... , 可以看到LevelData, BeatmapData, PathGrapherAsset三个选项，依次创建。
+
+![](./res/create_level_manually_steps.png)

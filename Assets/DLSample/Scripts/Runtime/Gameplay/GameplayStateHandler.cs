@@ -39,6 +39,7 @@ namespace DLSample.Gameplay.Phase
             _evtBus.Subscribe<GameplayEventParams.StartGameRequest>(OnRequestGameStart);
             _evtBus.Subscribe<GameplayEventParams.PauseGameRequest>(OnRequestGamePause);
             _evtBus.Subscribe<GameplayEventParams.RespawnGameRequest>(OnRequestRespawn);
+            _evtBus.Subscribe<GameplayEventParams.ExitGameRequest>(OnRequestExit);
             _evtBus.Subscribe<PlayerEventsParams.PlayerDieArg>(OnPlayerDie);
         }
         private void UnregisterEvents()
@@ -48,6 +49,7 @@ namespace DLSample.Gameplay.Phase
             _evtBus.Unsubscribe<GameplayEventParams.StartGameRequest>(OnRequestGameStart);
             _evtBus.Unsubscribe<GameplayEventParams.PauseGameRequest>(OnRequestGamePause);
             _evtBus.Unsubscribe<GameplayEventParams.RespawnGameRequest>(OnRequestRespawn);
+            _evtBus.Unsubscribe<GameplayEventParams.ExitGameRequest>(OnRequestExit);
             _evtBus.Unsubscribe<PlayerEventsParams.PlayerDieArg>(OnPlayerDie);
         }
 
@@ -71,6 +73,10 @@ namespace DLSample.Gameplay.Phase
         private void OnRequestRespawn(GameplayEventParams.RespawnGameRequest request)
         {
             _fsm.SetCurrentState<GameplayStates.RespawnState>();
+        }
+        private void OnRequestExit(GameplayEventParams.ExitGameRequest request)
+        {
+            _fsm.SetCurrentState<GameplayStates.Exiting>();
         }
         private void OnPlayerDie(PlayerEventsParams.PlayerDieArg arg)
         {

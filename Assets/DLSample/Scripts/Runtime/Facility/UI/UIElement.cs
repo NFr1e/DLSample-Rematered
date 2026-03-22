@@ -55,6 +55,7 @@ namespace DLSample.Facility.UI
         }
         public async void Pause()
         {
+            if (!isActive) return;
             isActive = false;
 
             pauseCts?.Cancel();
@@ -67,6 +68,7 @@ namespace DLSample.Facility.UI
         }
         public async void Resume()
         {
+            if (isActive) return;
             isActive = true;
 
             resumeCts?.Cancel();
@@ -97,7 +99,11 @@ namespace DLSample.Facility.UI
             if (!isDestroyed)
             {
                 isDestroyed = true;
-                Destroy(gameObject);
+
+                if (gameObject != null)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         protected virtual void OnPaused()

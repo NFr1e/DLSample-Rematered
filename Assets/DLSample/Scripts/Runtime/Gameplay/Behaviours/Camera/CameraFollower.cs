@@ -67,7 +67,7 @@ namespace DLSample.Gameplay.Behaviours
 
         public async void FocusTarget()
         {
-            await UniTask.Yield();
+            await UniTask.Yield(PlayerLoopTiming.PreLateUpdate);
             transform.position = target.position;
         }
         public void SetFollow(bool follow)

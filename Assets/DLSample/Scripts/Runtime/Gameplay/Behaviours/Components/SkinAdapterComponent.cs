@@ -10,24 +10,22 @@ namespace DLSample.Gameplay.Skin
         [SerializeField] private Transform headContainer;
 
         private GameplaySkinAdapter _adapter;
+        public GameplaySkinAdapter Adapter => _adapter;
 
-        protected override void OnInit()
+        protected override void OnStart()
         {
-            _adapter = new GameplaySkinAdapter(playerMove, headContainer,  playerDamager);
+            var backtrackHandler = GameplayEntry.Instance.ServiceLocator.Get<BacktrackablesHandler>();
+
+            _adapter = new GameplaySkinAdapter(playerMove, headContainer, backtrackHandler, playerDamager);
             _adapter.Init();
 
-            GameplayEntry.Instance.ServiceLocator.WhenServicesReady(AddAdapter, typeof(SkinChanger));
+            GameplayEntry.Instance.ServiceLocator.Get<SkinChanger>().AddAdapter(_adapter);
         }
 
         protected override void OnExit()
         {
             _adapter.Dispose();
             _adapter = null;
-        }
-
-        void AddAdapter()
-        {
-            GameplayEntry.Instance.ServiceLocator.Get<SkinChanger>().AddAdapter(_adapter);
         }
     }
 }

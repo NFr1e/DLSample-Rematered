@@ -96,6 +96,14 @@ namespace DLSample.Gameplay.Phase
                 _fsm.SetCurrentState<PreparingState>();
             }
         }
+        public class Exiting : GameplayStateBase
+        {
+            public Exiting(GameplayFSM fsm) : base(fsm) { }
+
+            public override void Enter() { }
+            public override void Exit() { }
+            public override string ToString() => $"\'<color=white>{GetType().Name}</color>\'";
+        }
         #endregion
     }
 }

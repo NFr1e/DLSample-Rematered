@@ -17,8 +17,7 @@ namespace DLSample.Gameplay.Stream
 
         private bool _synced = false;
 
-        public int BacktrackPriority => 100;
-        public double BacktrackTime { get; set; }
+        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_SOUNDTRACK_DIRECTOR;
         
         public GameplaySoundtrackDirector(EventBus eventBus, GameplaySoundtrackPlayer player, BacktrackablesHandler backtrackHandler)
         {
@@ -89,11 +88,9 @@ namespace DLSample.Gameplay.Stream
             await UniTask.Delay(0);
         }
 
-        public void GetBacktrackState() { }
-
         public void Backtrack()
         {
-            _soundtrackPlayer.Seek(BacktrackTime);
+            _soundtrackPlayer.Seek(_backtracksHandler.CurrentBacktrackTime);
         }
     }
 }

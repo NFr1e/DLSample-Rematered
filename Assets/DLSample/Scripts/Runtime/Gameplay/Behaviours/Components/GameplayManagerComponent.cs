@@ -45,6 +45,8 @@ namespace DLSample.Gameplay.Behaviours
         private GameplaySoundtrackPlayer _soundtrackPlayer;
         private GameplaySoundtrackDirector _soundtrackDirector;
 
+        private GameplayResulter _progressCounter;
+
         private GameplayInitPipeline _initializer;
 
         private EventBus eventBus;
@@ -72,8 +74,13 @@ namespace DLSample.Gameplay.Behaviours
             _soundtrackPlayer = new GameplaySoundtrackPlayer(audioClip, audioSource);
             _soundtrackDirector = new GameplaySoundtrackDirector(eventBus, _soundtrackPlayer, _backtrackHandler);
 
+            _progressCounter = new GameplayResulter(eventBus, levelData, _timer);
+
+            serviceLocator.Register<BacktrackablesHandler>(_backtrackHandler);
             serviceLocator.Register<CheckpointHandler>(_checkpointHandler);
             serviceLocator.Register<GameplayTimer>(_timer);
+            serviceLocator.Register<GameplayResulter>(_progressCounter);
+            serviceLocator.Register<LevelDataScriptable>(levelData);
         }
         protected override void OnStart()
         {
@@ -84,6 +91,7 @@ namespace DLSample.Gameplay.Behaviours
             modulesManager.Register(_playerController);
             modulesManager.Register(_inputHandler);
             modulesManager.Register(_soundtrackDirector);
+            modulesManager.Register(_progressCounter);
 
             CreateInitPipeline();
         }
@@ -108,7 +116,8 @@ namespace DLSample.Gameplay.Behaviours
         {
             _initializer = new GameplayInitPipeline(
                 eventBus, 
-                _playerController, mainPlayer);
+                _playerController, mainPlayer,
+                levelData, _progressCounter);
 
             modulesManager.Register(_initializer);
         }

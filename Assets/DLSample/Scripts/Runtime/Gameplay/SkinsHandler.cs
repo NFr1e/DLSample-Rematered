@@ -31,7 +31,7 @@ namespace DLSample.Gameplay.Skin
             _globalEvtBus = AppEntry.EventBus;
             _globalEvtBus.Subscribe<ChangeSkinRequest>(OnSkinChangeRequested);
 
-            _skinChanger.ChangeSkin(string.Empty);
+            _skinChanger.ChangeSkin(string.Empty);//TODO : Load from save
         }
         public void OnShutdown()
         {
