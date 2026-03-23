@@ -30,12 +30,16 @@ DLSample内置编辑器拓展，计划实现完整便捷的关卡设计工作流
 - PathGrapher上创建的事件可直接通过PathGrapherEventsSyncer同步到Gameplay。
 - PathGrapher需要搭配OdinInspector插件使用
 
-### 项目说明
-#### DLSample实现了一个简易的Gameplay生命周期管理框架。该框架将游戏中各模块抽象出 IModule接口, 并通过ModulesManagerg根据各模块Priority实现统一有序管理。模块管理器生命周期通过所在领域的Entry对象（如Gameplay -> GameplayEntry）桥接。
+#### PathBuilder
+- PathBuilder是DLSample提供的的通过读取PathGrapherAsset数据实现一键创建路径和引导线的工具
+
+### 框架
+ DLSample实现了一个简易的Gameplay生命周期管理框架。该框架将游戏中各模块抽象出```IModule```接口, 并由ModulesManager根据各模块的```Priority```值实现各模块的统一有序管理。模块管理器生命周期通过所在领域的Entry对象（如Gameplay -> GameplayEntry）桥接。
 #### 模块注册和访问需要遵守以下开发规范:
-1. 各模块实例需通过GameplayObject在在```OnStart()```中注册到ModulesManager(使用```GameplayEntry.Instance.ModulesManager.Register<T>(IModule module)```)
+1. 各模块实例需通过继承```GameplayObject```并覆写其```OnStart()```方法，并在该方法中将模块注册到ModulesManager(使用```GameplayEntry.Instance.ModulesManager.Register<T>(IModule module)```)
 2. 必须模块，即Gameplay必不可少的模块(如GameplayPlayerController)通过其构造函数或其他绑定方法直接注入依赖的模块实例
 3. 可选模块，即非必须的模块(如CameraFollowerController)，通过实现接口```IModuleRequire<T>```,由ModulesManager通过反射自动注入模块。
+4. 其余非模块杂项通过```GameplayEntry.Instance.ServiceLocator```的```Get<T>()```或```TryGet<T>(out service)```方法获取。
 
 ## 三.教程文档✨
 ### [一. 创建关卡](./DLSampleDoc/1_CreateLevel/README.md)

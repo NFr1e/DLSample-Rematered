@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using DLSample.Facility.Events;
+using DLSample.Shared;
 
 
 namespace DLSample.Gameplay.Behaviours
@@ -34,18 +35,18 @@ namespace DLSample.Gameplay.Behaviours
 
         private void OnTriggerEnter(Collider other)
         {
-            if(IsLayer(other.gameObject, drownLayer))
+            if(LayerHelper.IsLayer(other.gameObject, drownLayer))
             {
                 RequestDamage(PlayerDiecause.Drown);
             }
-            if(IsLayer(other.gameObject, borderLayer))
+            if(LayerHelper.IsLayer(other.gameObject, borderLayer))
             {
                 RequestDamage(PlayerDiecause.Border);
             }
         }
         private void OnCollisionEnter(Collision collision)
         {
-            if(IsLayer(collision.gameObject, obstacleLayer))
+            if(LayerHelper.IsLayer(collision.gameObject, obstacleLayer))
             {
                 RequestDamage(PlayerDiecause.Obstacle);
                 return;
@@ -59,10 +60,6 @@ namespace DLSample.Gameplay.Behaviours
 
             _evtBus.Invoke(this, _dieArg);
             OnDie?.Invoke(_dieArg);
-        }
-        private bool IsLayer(GameObject go, LayerMask mask)
-        {
-            return (mask.value & (1 << go.layer)) != 0;
         }
     }
 }

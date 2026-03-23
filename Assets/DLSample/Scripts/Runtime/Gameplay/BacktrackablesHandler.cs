@@ -30,7 +30,6 @@ namespace DLSample.Gameplay
 
             instances.Clear();
         }
-        public void OnUpdate(float deltaTime) { }
 
         private void OnCheckpointed(CheckpointEventParams.OnCheckpointed ctx)
         {

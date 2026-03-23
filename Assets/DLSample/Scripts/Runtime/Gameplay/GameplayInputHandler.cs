@@ -2,12 +2,11 @@ using DLSample.App;
 using DLSample.Shared;
 using DLSample.Framework;
 using DLSample.Facility.Events;
+using DLSample.Facility.Input;
 using DLSample.Gameplay.Phase;
 using Cysharp.Threading.Tasks;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using DLSample.Facility.Input;
-using System;
 
 namespace DLSample.Gameplay
 {
@@ -52,8 +51,6 @@ namespace DLSample.Gameplay
             UnsubscribeInput();
             UnsubscribeEvents();
         }
-        public void OnUpdate(float _) { }
-
         private void SubscribeEvents()
         {
             _evtBus.Subscribe<GameplayEventParams.GameplayStateChangeCtx>(OnStateChange);

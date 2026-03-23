@@ -6,27 +6,16 @@ using DLSample.Facility.Events;
 using DLSample.Facility;
 using DLSample.Framework;
 
-#if ODIN_INSPECTOR
-using Sirenix.OdinInspector;
-#endif
-
 namespace DLSample.Gameplay.Behaviours
 {
     public class GameplayManagerComponent : GameplayObject
     {
-#if ODIN_INSPECTOR
-        [Title("Configs")]
-#endif
         [SerializeField] private LevelDataScriptable levelData;
 
-#if ODIN_INSPECTOR
-        [Title("Player")]
-#endif
+        [Space(10)]
         [SerializeField] private GameplayPlayerMove mainPlayer;
 
-#if ODIN_INSPECTOR
-        [Title("Stream")]
-#endif
+        [Space(10)]
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip audioClip;
 
@@ -45,7 +34,7 @@ namespace DLSample.Gameplay.Behaviours
         private GameplaySoundtrackPlayer _soundtrackPlayer;
         private GameplaySoundtrackDirector _soundtrackDirector;
 
-        private GameplayResulter _progressCounter;
+        private GameplayResulter _resulter;
 
         private GameplayInitPipeline _initializer;
 
@@ -74,12 +63,13 @@ namespace DLSample.Gameplay.Behaviours
             _soundtrackPlayer = new GameplaySoundtrackPlayer(audioClip, audioSource);
             _soundtrackDirector = new GameplaySoundtrackDirector(eventBus, _soundtrackPlayer, _backtrackHandler);
 
-            _progressCounter = new GameplayResulter(eventBus, levelData, _timer);
+            _resulter = new GameplayResulter(eventBus, levelData, _timer);
 
             serviceLocator.Register<BacktrackablesHandler>(_backtrackHandler);
             serviceLocator.Register<CheckpointHandler>(_checkpointHandler);
             serviceLocator.Register<GameplayTimer>(_timer);
-            serviceLocator.Register<GameplayResulter>(_progressCounter);
+            serviceLocator.Register<GameplayPlayerController>(_playerController);
+            serviceLocator.Register<GameplayResulter>(_resulter);
             serviceLocator.Register<LevelDataScriptable>(levelData);
         }
         protected override void OnStart()
@@ -91,14 +81,18 @@ namespace DLSample.Gameplay.Behaviours
             modulesManager.Register(_playerController);
             modulesManager.Register(_inputHandler);
             modulesManager.Register(_soundtrackDirector);
-            modulesManager.Register(_progressCounter);
+            modulesManager.Register(_resulter);
 
             CreateInitPipeline();
         }
         protected override void OnExit()
         {
-            serviceLocator.Unregister<CheckpointHandler>();
-            serviceLocator.Unregister<GameplayTimer>();
+            serviceLocator?.Unregister<BacktrackablesHandler>();
+            serviceLocator?.Unregister<CheckpointHandler>();
+            serviceLocator?.Unregister<GameplayTimer>();
+            serviceLocator?.Unregister<GameplayPlayerController>();
+            serviceLocator?.Unregister<GameplayResulter>();
+            serviceLocator?.Unregister<LevelDataScriptable>();
 
             _fsm = null;
             _stateHandler = null;
@@ -117,7 +111,7 @@ namespace DLSample.Gameplay.Behaviours
             _initializer = new GameplayInitPipeline(
                 eventBus, 
                 _playerController, mainPlayer,
-                levelData, _progressCounter);
+                levelData, _resulter);
 
             modulesManager.Register(_initializer);
         }

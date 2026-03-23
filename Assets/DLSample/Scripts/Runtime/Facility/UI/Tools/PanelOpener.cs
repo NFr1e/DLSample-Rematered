@@ -9,9 +9,7 @@ namespace DLSample.Facility.UI
 
         public async void OpenPanel()
         {
-             var panel = await AppEntry.UIManager.OpenPanel(panelId);
-
-            Debug.Log($"OpenPanel {panel.name}");
+             await AppEntry.UIManager.OpenPanel(panelId);
         }
     }
 }

@@ -10,8 +10,8 @@ namespace DLSample.Framework
         /// </summary>
         int Priority { get; }
 
-        void OnInit();
-        void OnUpdate(float deltaTime);
-        void OnShutdown();
+        virtual void OnInit() { }
+        virtual void OnUpdate(float deltaTime) { }
+        virtual void OnShutdown() { }
     }
 }

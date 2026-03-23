@@ -16,7 +16,7 @@ namespace DLSample.Gameplay
         public struct RiseRequest : IEventArg { }
         public struct LandRequest : IEventArg { }
     }
-    public class StairController : IModule
+    public class StairController : IModule, IModuleRequire<GameplayStateHandler>
     {
         public int Priority => DLSampleConsts.Gameplay.PRIORITY_STAIR_CONTROLLER;
 
@@ -28,6 +28,7 @@ namespace DLSample.Gameplay
         private InputManager _inputManager;
 
         private GameplayStateBase _currentState;
+        private GameplayStateHandler _stateHandler;
 
         private readonly GameplayEventParams.WaitingGameRequest _waitingGameRequest = new();
 
@@ -66,8 +67,6 @@ namespace DLSample.Gameplay
             _inputManager.UnregisterInputTask(_gameInput.Gameplay.PlayerInput, _playerInputTask);
             _inputManager.UnregisterInputTask(_gameInput.App.Cancel, _cancelInputTask);
         }
-        public void OnUpdate(float deltaTime) { }
-
         private void OnStateChange(GameplayEventParams.GameplayStateChangeCtx ctx)
         {
             _currentState = ctx.CurrentState;
@@ -91,8 +90,14 @@ namespace DLSample.Gameplay
 
             if (_currentState is GameplayStates.PreparingState or GameplayStates.WaitingState)
             {
-                _evtBus.Invoke(this, _riseRequest);
+                if(!_stateHandler.IsGameStarted)
+                    _evtBus.Invoke(this, _riseRequest);
             }
+        }
+
+        void IModuleRequire<GameplayStateHandler>.SetModule(GameplayStateHandler module)
+        {
+            _stateHandler = module;
         }
     }
 }

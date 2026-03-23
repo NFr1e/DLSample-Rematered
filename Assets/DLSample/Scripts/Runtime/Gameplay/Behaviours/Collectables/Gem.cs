@@ -54,7 +54,7 @@ namespace DLSample.Gameplay.Behaviours
         }
 
         #region Backtrack
-        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_GEM;
+        public int BacktrackPriority => DLSampleConsts.Gameplay.BACKTRACK_PRIORITY_COLLECTABLE;
         public void Backtrack()
         {
             IsCollected = false;

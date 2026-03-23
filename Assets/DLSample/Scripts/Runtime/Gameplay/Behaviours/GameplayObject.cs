@@ -5,17 +5,26 @@ namespace DLSample.Gameplay.Behaviours
     public abstract class GameplayObject : MonoBehaviour
     {
         private bool _isDestroyed = false;
+        private GameplayEntry _entry;
 
         private void Awake()
         {
-            GameplayEntry.Instance.RegisterGameplayObject(this);
-
             OnInit();
+
+            _entry = GameplayEntry.Instance;
+            _entry.RegisterGameplayObject(this);
         }
         private void OnDestroy()
         {
-            if(!_isDestroyed)
+            if (!_isDestroyed)
+            {
+                if (_entry)
+                {
+                    _entry.UnregisterGameplayObject(this);
+                }
+
                 OnExit();
+            }
 
             _isDestroyed = true;
         }

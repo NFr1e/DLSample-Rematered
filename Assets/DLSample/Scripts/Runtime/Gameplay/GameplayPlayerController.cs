@@ -1,12 +1,12 @@
-using Cysharp.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEngine;
 using DLSample.Framework;
 using DLSample.Shared;
 using DLSample.Gameplay.Phase;
 using DLSample.Facility.Events;
 using DLSample.Gameplay.Behaviours;
-using UnityEngine;
-using System.Linq;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace DLSample.Gameplay
 {
@@ -65,8 +65,6 @@ namespace DLSample.Gameplay
 
             _backtrackablesHandler?.Unregister(this);
         }
-        public void OnUpdate(float _) { }
-
 
         private void SubscribeEvents()
         {

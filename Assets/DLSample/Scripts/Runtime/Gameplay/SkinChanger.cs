@@ -25,9 +25,6 @@ namespace DLSample.Gameplay.Skin
             _skinData = skinData;
             _skinContainer = skinContainer;
         }
-        public void OnInit() { }
-        public void OnShutdown() { }
-        public void OnUpdate(float _) { }
 
         public bool ChangeSkin(string skinId)
         {

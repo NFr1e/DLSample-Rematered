@@ -36,8 +36,6 @@ namespace DLSample.Gameplay
         {
             _evtBus.Unsubscribe<GameplayEventParams.GameplayStateChangeCtx>(OnStateChange);
         }
-        public void OnUpdate(float _) { }
-
         private async void OnStateChange(GameplayEventParams.GameplayStateChangeCtx ctx) 
         {
             switch(ctx.CurrentState)

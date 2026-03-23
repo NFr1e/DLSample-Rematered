@@ -37,7 +37,7 @@ namespace DLSample.Gameplay.Stream
         }
         public void OnUpdate(float deltaTime) 
         {
-            _timer?.Tick(deltaTime);
+            _timer.Tick(deltaTime);
         }
 
         private void OnStateChange(GameplayEventParams.GameplayStateChangeCtx ctx)

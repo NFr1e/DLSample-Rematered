@@ -40,11 +40,11 @@ namespace DLSample.Editor.PathGrapher
 
             switch (evt)
             {
-                case SpeedChangeEvent s:
+                case SpeedChangeEvent spd:
                     var speedEvt = new PlayerEvents.SpeedChangeEvent
                     {
-                        InvokeTime = s.GlobalTime,
-                        Speed = s.newSpeed
+                        InvokeTime = spd.GlobalTime,
+                        Speed = spd.newSpeed
                     };
 
                     gameplayEvt = speedEvt;
@@ -60,30 +60,30 @@ namespace DLSample.Editor.PathGrapher
                     gameplayEvt = gravityEvt;
                     break;
 
-                case ForceTurnEvent t:
+                case ForceTurnEvent tn:
                     var turnEvent = new PlayerEvents.ForceTurnEvent
                     {
-                        InvokeTime = t.GlobalTime,
+                        InvokeTime = tn.GlobalTime,
                     };
 
                     gameplayEvt = turnEvent;
                     break;
 
-                case DirectionChangeEvent d:
+                case DirectionChangeEvent dir:
                     var directionEvt = new PlayerEvents.DirectionChangeEvent
                     {
-                        InvokeTime = d.GlobalTime,
-                        Directions = d.newDirections
+                        InvokeTime = dir.GlobalTime,
+                        Directions = dir.newDirections
                     };
 
                     gameplayEvt = directionEvt;
                     break;
 
-                case TeleportEvent t:
+                case TeleportEvent tp:
                     var tpEvt = new PlayerEvents.TeleportEvent
                     {
-                        InvokeTime = t.GlobalTime,
-                        Position = t.targetPosition,
+                        InvokeTime = tp.GlobalTime,
+                        Position = tp.targetPosition,
                     };
 
                     gameplayEvt = tpEvt;
@@ -97,6 +97,7 @@ namespace DLSample.Editor.PathGrapher
                     };
                     gameplayEvt = jpEvt;
                     break;
+
                 default:
                     gameplayEvt = null;
                     break;

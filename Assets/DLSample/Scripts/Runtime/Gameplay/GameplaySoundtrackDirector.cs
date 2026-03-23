@@ -41,8 +41,6 @@ namespace DLSample.Gameplay.Stream
 
             _soundtrackPlayer.Dispose();
         }
-        public void OnUpdate(float _) { }
-
         private void SubscribeEvents()
         {
             _evtBus?.Subscribe<GameplayEventParams.GameplayStateChangeCtx>(OnStateChange);

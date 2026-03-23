@@ -1,4 +1,5 @@
 using DLSample.Facility.Events;
+using DLSample.Shared;
 using UnityEngine;
 
 namespace DLSample.Gameplay.Behaviours
@@ -6,6 +7,8 @@ namespace DLSample.Gameplay.Behaviours
     [RequireComponent(typeof(Collider),typeof(Rigidbody))]
     public class TriggeryCollector : GameplayObject, ICollector
     {
+        [SerializeField] private LayerMask excludeLayers;
+
         private EventBus _evtBus;
         private OnCollectEventArgs _onCollectEventArgs;
 
@@ -20,7 +23,7 @@ namespace DLSample.Gameplay.Behaviours
         }
         private void OnTriggerEnter(Collider other)
         {
-            if(other.TryGetComponent<ICollectable>(out var collectable))
+            if(other.TryGetComponent<ICollectable>(out var collectable) && !LayerHelper.IsLayer(other.gameObject, excludeLayers))
             {
                 Collect(collectable);
             }

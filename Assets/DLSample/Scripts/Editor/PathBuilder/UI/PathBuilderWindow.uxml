@@ -21,7 +21,7 @@
                 <uie:ObjectField label="PathPrefab" name="PathPrefabField" type="UnityEngine.GameObject, UnityEngine.CoreModule" />
                 <ui:FloatField label="PathWidth" value="3" name="PathWidthField" />
                 <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: column;">
-                    <ui:Button text="Generate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneratePathButton" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px;" />
+                    <ui:Button text="Generate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneratePathButton" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
@@ -33,8 +33,8 @@
                 <uie:ObjectField label="HintBoxPrefab" name="HintBoxPrefabField" type="UnityEngine.GameObject, UnityEngine.CoreModule" />
                 <uie:ObjectField label="HintSegmentPrefab" name="HintSegmentPrefabField" type="UnityEngine.GameObject, UnityEngine.CoreModule" />
                 <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-direction: row-reverse;">
-                    <ui:Button text="Generate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneratePathButton" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; flex-grow: 1;" />
-                    <ui:Button text="GenerateBoxOnly" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneratePathButton" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; flex-grow: 0;" />
+                    <ui:Button text="Generate" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneratePathButton" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; flex-grow: 1; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;" />
+                    <ui:Button text="GenerateBoxOnly" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneratePathButton" style="margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; flex-grow: 0; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>

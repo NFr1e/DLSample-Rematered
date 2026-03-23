@@ -9910,7 +9910,7 @@ GameObject:
   - component: {fileID: 1555213631443068960}
   - component: {fileID: 1555213631443072089}
   - component: {fileID: 1555213631443072194}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GemEffect
   m_TagString: LineTail
   m_Icon: {fileID: 0}

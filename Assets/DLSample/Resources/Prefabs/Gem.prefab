@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9032536530262197781}
   - component: {fileID: 9032536530262197779}
   - component: {fileID: 9032536530262197778}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 9032536531008711565}
   - component: {fileID: 9032536531008711564}
   - component: {fileID: 9032536531008711567}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Gem
   m_TagString: Collectable
   m_Icon: {fileID: 0}

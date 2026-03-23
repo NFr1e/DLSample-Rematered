@@ -37,7 +37,5 @@ namespace DLSample.Gameplay
 
             _evtBus.Invoke(this, _prepareGameRequest);
         }
-        public void OnShutdown() { }
-        public void OnUpdate(float _) { }
     }
 }

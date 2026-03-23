@@ -1,8 +1,8 @@
-using DLSample.Facility.Events;
-using DLSample.Framework;
-using DLSample.Gameplay.Behaviours;
-using DLSample.Gameplay.Stream;
 using DLSample.Shared;
+using DLSample.Framework;
+using DLSample.Facility.Events;
+using DLSample.Gameplay.Stream;
+using DLSample.Gameplay.Behaviours;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,8 +56,6 @@ namespace DLSample.Gameplay
             _eventBus.Unsubscribe<OnConsumeCheckpoint>(OnConsumeCheckpoint);
             _eventBus.Subscribe<GameplayEventParams.BacktrackGameRequest>(OnBacktrack);
         }
-        public void OnUpdate(float _) { }
-
         private void OnCollectCollectable(OnCollectEventArgs args)
         {
             switch(args.collectable)

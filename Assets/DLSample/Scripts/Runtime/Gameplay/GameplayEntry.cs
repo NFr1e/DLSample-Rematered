@@ -25,13 +25,15 @@ namespace DLSample.Gameplay
                     }
                 }
 
-                _instance.Awake();
+                _instance.OnInit();
                 return _instance;
             }
         }
 
         private static GameplayEntry CreateInstance()
         {
+            Debug.Log("Created a GameplayEntry Singleton");
+
             return new GameObject
             {
                 name = typeof(GameplayEntry).Name + "_LazyLoad",
@@ -61,6 +63,9 @@ namespace DLSample.Gameplay
         #region Lifecycle
         private void OnInit()
         {
+            _started = false;
+            _disposed = false;
+
             if (_initialized) return;
 
             CreateFacilities();
@@ -94,6 +99,8 @@ namespace DLSample.Gameplay
             ModulesManager.Dispose();
             ServiceLocator.Dispose();
 
+            _gameplayObjects.Clear();
+
             _disposed = true;
             _started = false;
         }
@@ -112,7 +119,14 @@ namespace DLSample.Gameplay
             {
                 if (obj != null)
                 {
-                    obj.DoStart();
+                    try
+                    {
+                        obj.DoStart();
+                    } 
+                    catch(System.Exception e)
+                    {
+                        Debug.LogException(e);
+                    }
                 }
             }
         }
@@ -123,16 +137,24 @@ namespace DLSample.Gameplay
         #region PublicAPI
         public void RegisterGameplayObject(GameplayObject gameplayObject)
         {
-            if (!_started)
-            {
-                if (_gameplayObjects.Contains(gameplayObject)) return;
+            if (_gameplayObjects.Contains(gameplayObject)) return;
+            _gameplayObjects.Add(gameplayObject);
 
-                _gameplayObjects.Add(gameplayObject);
-            }
-            else
+            if(_started)
             {
-                gameplayObject.DoStart();
+                try
+                {
+                    gameplayObject.DoStart();
+                }
+                catch(System.Exception e)
+                {
+                    Debug.LogException(e);
+                }
             }
+        }
+        public void UnregisterGameplayObject(GameplayObject gameplayObject)
+        {
+            _gameplayObjects.Remove(gameplayObject);
         }
         #endregion
     }

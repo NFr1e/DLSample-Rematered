@@ -49,8 +49,6 @@ namespace DLSample.Gameplay
             _evBus.Unsubscribe<GameplayEventParams.GameplayStateChangeCtx>(OnStateChange);
             _evBus.Unsubscribe<GameplayEventParams.RespawnGameRequest>(OnRespawn);
         }
-        public void OnUpdate(float _) { }
-
         public void Check(Checkpoint checkpoint)
         {
             if (checkpoint != null)

@@ -37,7 +37,6 @@ namespace DLSample.Gameplay.Skin
         {
             _globalEvtBus.Unsubscribe<ChangeSkinRequest>(OnSkinChangeRequested);
         }
-        public void OnUpdate(float _) { }
 
         private void OnSkinChangeRequested(ChangeSkinRequest request)
         {

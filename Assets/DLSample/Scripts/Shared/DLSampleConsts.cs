@@ -62,10 +62,15 @@ namespace DLSample.Shared
             public const int BACKTRACK_PRIORITY_TIMER = 0;
             public const int BACKTRACK_PRIORITY_PLAYER_CONTROLLER = 0;
             public const int BACKTRACK_PRIORITY_SOUNDTRACK_DIRECTOR = 0;
-            public const int BACKTRACK_PRIORITY_GEM = 10;
+
+            public const int BACKTRACK_PRIORITY_COLLECTABLE = 10;
+
             public const int BACKTRACK_PRIORITY_CAMERA_FOLLOWER = 10;
+
             public const int BACKTRACK_PRIORITY_SKIN_ADAPTER = 20;
             #endregion
+
+            public const float HINT_BOX_TRIGGER_INTERVAL = 0.03f;
         }
         public struct Input
         {
