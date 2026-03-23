@@ -4,6 +4,14 @@ namespace DLSample.Shared
     {
         public struct Editor
         {
+            #region MenuItem
+            public const string MENU_ITEM_CREATE_LEVEL = "DLSample/CreateLevel";
+            public const int MENU_ITEM_CREATE_LEVEL_PRIORITY = 1;
+
+            public const string MENU_ITEM_PATH_BUILDER = "DLSample/PathBuilder";
+            public const int MENU_ITEM_PATH_BUILDER_PRIORITY = 2;
+            #endregion
+
             #region CreateMenu
             //Level
             public const string CREATE_MENU_LEVELDATA_MENU_NAME = "DLSample/Level/LevelData";
@@ -40,6 +48,7 @@ namespace DLSample.Shared
             public const int PRIORITY_SOUNDTRACK_DIRECTOR = 1;
             public const int PRIORITY_TIMER_DIRECTOR = 1;
             public const int PRIORITY_UI_HANDLER = 1;
+            public const int PRIORITY_RESULTER = 1;
 
             public const int PRIORITY_SKIN_HANDLER = 2;
             public const int PRIORITY_SKIN_CHANGER = 2;

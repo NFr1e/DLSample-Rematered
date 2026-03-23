@@ -48,7 +48,9 @@ namespace DLSample.Gameplay.Behaviours
         public virtual void Consume()
         {
             _consumed = true;
-            GameplayEntry.Instance.EventBus.Invoke(this, _consumedEvent);
+
+            _consumedEvent.checkpoint = this;
+            GameplayEntry.Instance.EventBus.Invoke<OnConsumeCheckpoint>(this, _consumedEvent);
         }
 
         private void OnDrawGizmos()

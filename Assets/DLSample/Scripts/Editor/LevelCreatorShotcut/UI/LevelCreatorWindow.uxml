@@ -1,4 +1,4 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/DLSample/Scripts/Editor/LevelCreatorShotcut/UI/LevelCreatorWindow.uss?fileID=7433441132597879392&amp;guid=4c149815678d4d840a3a8d62c2f06db8&amp;type=3#LevelCreatorWindow" />
     <ui:VisualElement name="Root" style="flex-grow: 1; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px;">
         <ui:VisualElement name="Header" style="flex-grow: 0; margin-bottom: 5px;">
@@ -11,25 +11,25 @@
                     <ui:Label tabindex="-1" text="Path" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TitleLabel" style="font-size: 12px; -unity-font-style: bold;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="PathSelectorContainer" style="flex-grow: 1; flex-direction: row; align-items: center; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; background-color: rgb(50, 50, 50); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;">
-                    <ui:Label tabindex="-1" text="PathDisplayLabel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PathDisplayLabel" style="flex-grow: 1;" />
-                    <ui:Button text="Select" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:Label tabindex="-1" text="PathDisplayLabel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PathDisplayLabel" class="path-display-label" style="flex-grow: 1;" />
+                    <ui:Button text="Select" parse-escape-sequences="true" display-tooltip-when-elided="true" class="path-select-btn" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="LevelConfig" style="flex-grow: 0; background-color: rgb(75, 75, 75); padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; border-left-color: rgb(75, 75, 75); border-right-color: rgb(75, 75, 75); border-top-color: rgb(75, 75, 75); border-bottom-color: rgb(75, 75, 75); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; -unity-background-image-tint-color: rgba(0, 0, 0, 0); margin-bottom: 5px;">
                 <ui:VisualElement name="Title" style="flex-grow: 1; border-bottom-width: 0; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; border-top-width: 0; border-right-width: 0; border-left-width: 0;">
                     <ui:Label tabindex="-1" text="LevelConfig" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TitleLabel" style="font-size: 12px; -unity-font-style: bold;" />
                 </ui:VisualElement>
-                <ui:VisualElement name="PathSelectorContainer" style="flex-grow: 1; flex-direction: column; align-items: center; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; background-color: rgb(50, 50, 50); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;">
-                    <ui:TextField picking-mode="Ignore" label="LevelName" value="LevelName" name="LevelNameTextField" style="flex-grow: 1;" />
-                    <ui:TextField picking-mode="Ignore" label="SoundtrackInfo" value="Soundtrack" name="SoundtrackInfoTextField" style="flex-grow: 1;" />
-                    <uie:ObjectField label="LevelSoundtrack" type="UnityEngine.AudioClip, UnityEngine.AudioModule" name="SoundtrackField" allow-scene-objects="false" style="flex-grow: 1; flex-wrap: nowrap; flex-basis: auto; flex-shrink: 1;" />
-                    <ui:IntegerField label="GemCount" value="10" name="GemCountField" style="flex-grow: 1;" />
+                <ui:VisualElement style="flex-grow: 1; background-color: rgb(50, 50, 50); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;">
+                    <ui:TextField picking-mode="Ignore" label="LevelName" value="LevelName" name="LevelNameTextField" class="config-levelname-field" style="flex-grow: 1;" />
+                    <ui:TextField picking-mode="Ignore" label="SoundtrackInfo" value="Soundtrack" name="SoundtrackInfoTextField" class="config-soundtrackinfo-field" style="flex-grow: 1;" />
+                    <uie:ObjectField label="LevelSoundtrack" type="UnityEngine.AudioClip, UnityEngine.AudioModule" name="SoundtrackField" allow-scene-objects="false" class="config-soundtrack-field" style="flex-grow: 1; flex-wrap: nowrap; flex-basis: auto; flex-shrink: 1;" />
+                    <ui:IntegerField label="GemCount" value="10" name="GemCountField" class="config-gemcount-field" style="flex-grow: 1;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Bottom" style="flex-grow: 0; flex-direction: row-reverse; position: relative; bottom: 0;">
-            <ui:Button text="Confirm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ConfirmBtn" />
-            <ui:Button text="Cancel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CancelBtn" />
+            <ui:Button text="Confirm" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ConfirmBtn" class="btn-confirm" />
+            <ui:Button text="Cancel" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CancelBtn" class="btn-cancel" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

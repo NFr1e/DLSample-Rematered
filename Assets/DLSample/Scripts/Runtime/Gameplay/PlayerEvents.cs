@@ -9,8 +9,8 @@ namespace DLSample.Gameplay
     {
         public struct PlayerDieArg : IEventArg
         {
-            public PlayerDiecause dieCause { get; set; }
-            public PlayerMovingArgs movingArgs { get; set; }
+            public PlayerDiecause DieCause { get; set; }
+            public PlayerMovingArgs MovingArgs { get; set; }
         }
         public struct SpeedChangeRequest : IEventArg
         {
@@ -25,6 +25,10 @@ namespace DLSample.Gameplay
         public struct DirectionChangeRequest : IEventArg
         {
             public PlayerDirections Directions { get; set; }
+        }
+        public struct ForceTurnRequest : IEventArg 
+        {
+
         }
 
         public struct TeleportRequest : IEventArg
@@ -81,6 +85,18 @@ namespace DLSample.Gameplay
             public void Trigger()
             {
                 _request.Directions = Directions;
+                GameplayEntry.Instance.EventBus.Invoke(this, _request);
+            }
+        }
+
+        public class ForceTurnEvent : IGameplayEvent
+        {
+            public double InvokeTime{ get; set; } = 0;
+
+            private PlayerEventsParams.ForceTurnRequest _request = new();
+
+            public void Trigger()
+            {
                 GameplayEntry.Instance.EventBus.Invoke(this, _request);
             }
         }

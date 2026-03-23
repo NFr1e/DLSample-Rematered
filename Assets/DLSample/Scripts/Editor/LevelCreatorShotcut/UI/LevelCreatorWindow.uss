@@ -3,3 +3,9 @@
     -unity-font-style: bold;
     color: rgb(68, 138, 255);
 }
+
+.path-display-label {
+}
+
+.path-select-btn {
+}

@@ -1,30 +1,52 @@
+using DLSample.Shared;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LevelCreatorWindow : EditorWindow
+namespace DLSample.Editor.LevelCreator
 {
-    [SerializeField]
-    private VisualTreeAsset m_VisualTreeAsset = default;
-
-    [MenuItem("Window/UI Toolkit/LevelCreatorWindow")]
-    public static void ShowExample()
+    public class LevelCreatorWindow : EditorWindow
     {
-        LevelCreatorWindow wnd = GetWindow<LevelCreatorWindow>();
-        wnd.titleContent = new GUIContent("LevelCreatorWindow");
-    }
+        [SerializeField] private VisualTreeAsset m_VisualTreeAsset = default;
 
-    public void CreateGUI()
-    {
-        // Each editor window contains a root VisualElement object
-        VisualElement root = rootVisualElement;
+        private LevelCreatorController _view;
 
-        // VisualElements objects can contain other VisualElement following a tree hierarchy.
-        VisualElement label = new Label("Hello World! From C#");
-        root.Add(label);
+        [MenuItem(
+            itemName: DLSampleConsts.Editor.MENU_ITEM_CREATE_LEVEL,
+            priority = DLSampleConsts.Editor.MENU_ITEM_CREATE_LEVEL_PRIORITY)]
+        public static void OpenWindow()
+        {
+            LevelCreatorWindow window = GetWindow<LevelCreatorWindow>();
+            window.titleContent = new GUIContent("Level Creator");
+            window.minSize = new(600, 300);
+            window.Show();
+        }
 
-        // Instantiate UXML
-        VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
-        root.Add(labelFromUXML);
+        public void CreateGUI()
+        {
+            if (m_VisualTreeAsset == null)
+            {
+                Debug.LogError("[LevelCreator] VisualTreeAsset is not assigned!");
+                return;
+            }
+
+            Initialize();
+        }
+
+        private void OnDestroy()
+        {
+            Dispose();
+        }
+
+        private void Initialize()
+        {
+            _view = new LevelCreatorController(m_VisualTreeAsset, this);
+            _view.Init(rootVisualElement);
+        }
+
+        private void Dispose()
+        {
+            _view?.Dispose();
+        }
     }
 }

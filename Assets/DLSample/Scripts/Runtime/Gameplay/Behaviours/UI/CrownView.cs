@@ -1,16 +1,15 @@
-using DG.Tweening;
-using DLSample.Shared;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using DLSample.Shared;
 
 namespace DLSample.Gameplay.Behaviours.UI
 {
     public class CrownView : MonoBehaviour
     {
-        [SerializeField] private List<Image> crownIcons = new();
-        [SerializeField] private AudioClip crownAudioClip;
+        [SerializeField] private List<Image> _images = new();
+        [SerializeField] private List<AudioClip> crownClips = new();
 
         private GameplayResulter _resulter;
 
@@ -19,20 +18,31 @@ namespace DLSample.Gameplay.Behaviours.UI
             _resulter = GameplayEntry.Instance.ServiceLocator.Get<GameplayResulter>();
             Display();
         }
-        private void Display()
+        private async void Display()
         {
             if (_resulter is null) return;
 
-            for (int i = 0; i < _resulter.GetCrownsCount(); i++)
+            int crownCount = _resulter.GetCrownsCount();
+
+            if (crownCount > 0 && crownCount <= crownClips.Count)
             {
-                if (crownIcons.Count > i)
+                AudioHelper.PlayAudioClip(crownClips[crownCount - 1]);
+            }
+            else if (crownCount > crownClips.Count)
+            {
+                AudioHelper.PlayAudioClip(crownClips[^1]);
+            }
+
+            for (int i = 0; i < crownCount; i++)
+            {
+                if (_images.Count > i)
                 {
-                    var icon = crownIcons[i];
+                    var icon = _images[i];
 
-                    if(icon)
-                        icon.DOFade(1, 0.5f);
-
-                    AudioHelper.PlayAudioClip(crownAudioClip);
+                    if (icon)
+                    {
+                        await icon.DOFade(1, 0.4f).From(0).AsyncWaitForCompletion();
+                    }
                 }
             }
         }

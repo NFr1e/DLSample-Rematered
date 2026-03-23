@@ -41,6 +41,7 @@ namespace DLSample.Shared
         public void SetDirection(PlayerDirections direction)
         {
             directions = direction;
+            directions.Reset();
         }
     }
 }

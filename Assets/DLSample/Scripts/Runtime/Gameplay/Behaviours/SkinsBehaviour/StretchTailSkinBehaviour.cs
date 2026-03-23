@@ -97,12 +97,12 @@ namespace DLSample.Gameplay.Behaviours.Skin
 
         public override void OnPlayerDie(PlayerEventsParams.PlayerDieArg arg)
         {
-            switch (arg.dieCause)
+            switch (arg.DieCause)
             {
                 case PlayerDiecause.Obstacle:
                     var effect = _obstacledEffectPool.Get();
 
-                    effect.gameObject.transform.position = arg.movingArgs.Position;
+                    effect.gameObject.transform.position = arg.MovingArgs.Position;
                     effect.BoomClips();
                     AudioHelper.PlayAudioClip(obstacledAudioClip);
                     break;
@@ -117,6 +117,12 @@ namespace DLSample.Gameplay.Behaviours.Skin
         private Transform CreateTail(Vector3 position, Quaternion rotation)
         {
             _tailStartPos = position;
+
+            if(_tailContainer == null)
+            {
+                _tailContainer = new GameObject("Tail").transform;
+                _tailContainer.SetParent(transform);
+            }
 
             var instance = Instantiate(tailPrefab, position, rotation, _tailContainer).transform;
 
@@ -150,10 +156,7 @@ namespace DLSample.Gameplay.Behaviours.Skin
         #region Backtrack
         public override void OnReset()
         {
-            for (int i = 0; i < _tailContainer.childCount; i++)
-            {
-                Destroy(_tailContainer.GetChild(i).gameObject);
-            }
+            Destroy(_tailContainer.gameObject);
 
             _landEffectPool?.ReturnAll();
             _obstacledEffectPool?.ReturnAll();

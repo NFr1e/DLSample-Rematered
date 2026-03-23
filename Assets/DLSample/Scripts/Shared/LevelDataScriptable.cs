@@ -10,13 +10,13 @@ namespace DLSample.Shared
     public class LevelDataScriptable : ScriptableObject
     {
 #if UNITY_EDITOR
-        [SerializeField] private SceneAsset levelScene;
+        public SceneAsset levelScene;
 #endif
-        [SerializeField] private string sceneName;
-        [SerializeField] private string levelName = "LevelName";
-        [SerializeField] private string soundtrackInfo = "SoundtrackInfo";
-        [SerializeField] private int gemCount = 10;
-        [SerializeField] private float levelLength = 100;
+        public string sceneName;
+        public string levelName = "LevelName";
+        public string soundtrackInfo = "SoundtrackInfo";
+        public int gemCount = 10;
+        public float levelLength = 100;
 
         public string SceneName => sceneName;
         public string LevelName => levelName;

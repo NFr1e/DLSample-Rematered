@@ -3504,11 +3504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fdde831afd54374f8f5e7166375817d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crownIcons:
+  _images:
   - {fileID: 1866376927438117742}
   - {fileID: 5456041945270905960}
   - {fileID: 6947259617117748157}
-  crownAudioClip: {fileID: 8300000, guid: 91ae8b332ab5f2d4eaf8e4b5e4e21d22, type: 3}
+  crownClips:
+  - {fileID: 8300000, guid: 50ae9d2c29187834ba9e7dde134e12e5, type: 3}
+  - {fileID: 8300000, guid: 6acca8607c82f8a408e0cff8ed000c0c, type: 3}
+  - {fileID: 8300000, guid: 463eeba3f366a4b4aa3507d016084d81, type: 3}
 --- !u!114 &2293133880962488190
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -76,6 +76,7 @@ namespace DLSample.Gameplay
             _evtBus?.Subscribe<PlayerEventsParams.SpeedChangeRequest>(ChangePlayerSpeed);
             _evtBus?.Subscribe<PlayerEventsParams.GravityChangeRequest>(ChangePlayerGravity);
             _evtBus?.Subscribe<PlayerEventsParams.DirectionChangeRequest>(ChangePlayerDirections);
+            _evtBus?.Subscribe<PlayerEventsParams.ForceTurnRequest>(ForceTurn);
             _evtBus?.Subscribe<PlayerEventsParams.TeleportRequest>(PlayerTeleport);
             _evtBus?.Subscribe<PlayerEventsParams.VelocityChangeRequest>(PlayerJump);
         }
@@ -87,6 +88,7 @@ namespace DLSample.Gameplay
             _evtBus?.Unsubscribe<PlayerEventsParams.SpeedChangeRequest>(ChangePlayerSpeed);
             _evtBus?.Unsubscribe<PlayerEventsParams.GravityChangeRequest>(ChangePlayerGravity);
             _evtBus?.Unsubscribe<PlayerEventsParams.DirectionChangeRequest>(ChangePlayerDirections);
+            _evtBus?.Unsubscribe<PlayerEventsParams.ForceTurnRequest>(ForceTurn);
             _evtBus?.Unsubscribe<PlayerEventsParams.TeleportRequest>(PlayerTeleport);
             _evtBus?.Unsubscribe<PlayerEventsParams.VelocityChangeRequest>(PlayerJump);
         }
@@ -116,7 +118,7 @@ namespace DLSample.Gameplay
         }
         void OnPlayerDie(PlayerEventsParams.PlayerDieArg arg)
         {
-            switch (arg.dieCause)
+            switch (arg.DieCause)
             {
                 case PlayerDiecause.Obstacle:
                     StopPlayer();
@@ -185,6 +187,11 @@ namespace DLSample.Gameplay
                 player.PlayerParams.SetDirection(request.Directions);
             }
         }
+
+        private void ForceTurn(PlayerEventsParams.ForceTurnRequest request)
+        {
+            _mainPlayer.Turn();
+        }
         private void PlayerTeleport(PlayerEventsParams.TeleportRequest request)
         {
             foreach (var player in _playersList)
@@ -221,9 +228,11 @@ namespace DLSample.Gameplay
 
             public readonly void Backtrack()
             {
+                player.StopMove();
+                player.SetVelocity(velocity);
+
                 player.PlayerParams.SetSpeed(speed);
                 player.PlayerParams.SetLocalGravity(gravity);
-                player.SetVelocity(velocity);
                 player.PlayerParams.SetDirection(directions);
                 directions.SetCurrentIndex(directionIndex);
 

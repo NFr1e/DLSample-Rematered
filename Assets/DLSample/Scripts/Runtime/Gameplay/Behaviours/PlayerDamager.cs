@@ -54,8 +54,8 @@ namespace DLSample.Gameplay.Behaviours
 
         public void RequestDamage(PlayerDiecause diecause)
         {
-            _dieArg.dieCause = diecause;
-            _dieArg.movingArgs = player.MovingArgs;
+            _dieArg.DieCause = diecause;
+            _dieArg.MovingArgs = player.MovingArgs;
 
             _evtBus.Invoke(this, _dieArg);
             OnDie?.Invoke(_dieArg);

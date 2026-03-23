@@ -73,6 +73,8 @@ namespace DLSample.Gameplay.Behaviours
             if (!_isMoving) return;
 
             _isMoving = false;
+
+            UpdateMovingCtx();
             OnStopMove?.Invoke(_movingArgs);
         }
 
@@ -80,6 +82,7 @@ namespace DLSample.Gameplay.Behaviours
         {
             _isMoving = false;
             _isGrounded = false;
+
             _dropVelocity = Vector3.zero;
         }
 
@@ -108,6 +111,7 @@ namespace DLSample.Gameplay.Behaviours
             OnLand?.Invoke(_movingArgs);
 
             _dropVelocity = Vector3.zero;
+            UpdateMovingCtx();
         }
 
         public void Turn()

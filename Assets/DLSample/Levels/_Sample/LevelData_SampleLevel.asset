@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: LevelData_SampleLevel
   m_EditorClassIdentifier: 
   levelScene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  sceneName: SampleLevel
   levelName: SampleLevel
   soundtrackInfo: "HOYO-MIX-\u665A\u7977\u7684\u94C3\u6B4C"
   gemCount: 10
-  levelLength: 100
+  levelLength: 103

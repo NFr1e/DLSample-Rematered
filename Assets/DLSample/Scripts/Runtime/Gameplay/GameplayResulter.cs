@@ -10,7 +10,7 @@ namespace DLSample.Gameplay
 {
     public class GameplayResulter : IModule
     {
-        public int Priority => 12;
+        public int Priority => DLSampleConsts.Gameplay.PRIORITY_RESULTER;
 
         private readonly LevelDataScriptable _levelData;
 
@@ -74,7 +74,7 @@ namespace DLSample.Gameplay
         }
         private void OnConsumeCheckpoint(OnConsumeCheckpoint args)
         {
-            if(args.checkpoint is CrownCheckpoint crownCheckpoint)
+            if (args.checkpoint is CrownCheckpoint crownCheckpoint)
             {
                 _collectedCrowns.Remove(crownCheckpoint.Crown);
             }
