@@ -63,9 +63,6 @@ namespace DLSample.Gameplay
         #region Lifecycle
         private void OnInit()
         {
-            _started = false;
-            _disposed = false;
-
             if (_initialized) return;
 
             CreateFacilities();
