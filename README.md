@@ -9,6 +9,10 @@
 - 最低版本 Unity 2019.4
 
 - **推荐使用Unity2022.3 LTS**
+  
+#### 已知兼容问题
+- ```LevelRestarter```中使用的```UnityEngine.SceneManagement```中的```SceneManager.loadedScenesCount```API在旧版本中不存在。请考虑替换为```SceneManager.sceneCount```。
+- 在旧版本Unit中打开项目，有时部分碰撞器会发生大小与预期不一致的问题
 
 ### 使用的插件
 - [UniTask](https://github.com/Cysharp/UniTask) 异步编程插件

@@ -25,7 +25,11 @@ namespace DLSample.Gameplay
                     }
                 }
 
-                _instance.OnInit();
+                if (!_instance._initialized)
+                {
+                    _instance.OnInit();
+                }
+
                 return _instance;
             }
         }

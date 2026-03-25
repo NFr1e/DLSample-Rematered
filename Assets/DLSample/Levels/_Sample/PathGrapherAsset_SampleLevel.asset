@@ -775,6 +775,7 @@ MonoBehaviour:
         points:
         - {x: 0, y: 0, z: 0}
         - {x: 15.62392, y: 0, z: -0.0000018625162}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -794,6 +795,7 @@ MonoBehaviour:
         points:
         - {x: 15.62392, y: 0, z: -0.0000018625162}
         - {x: 15.62392, y: 0, z: 2.7288678}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -813,6 +815,7 @@ MonoBehaviour:
         points:
         - {x: 15.62392, y: 0, z: 2.7288678}
         - {x: 18.600725, y: 0, z: 2.7288675}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -832,6 +835,7 @@ MonoBehaviour:
         points:
         - {x: 18.600725, y: 0, z: 2.7288675}
         - {x: 18.600725, y: 0, z: 14.416194}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -851,6 +855,7 @@ MonoBehaviour:
         points:
         - {x: 18.600725, y: 0, z: 14.416194}
         - {x: 21.200628, y: 0, z: 14.416194}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -870,6 +875,7 @@ MonoBehaviour:
         points:
         - {x: 21.200628, y: 0, z: 14.416194}
         - {x: 21.200628, y: 0, z: 17.523762}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -889,6 +895,7 @@ MonoBehaviour:
         points:
         - {x: 21.200628, y: 0, z: 17.523762}
         - {x: 33.587387, y: 0, z: 17.52376}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -908,6 +915,7 @@ MonoBehaviour:
         points:
         - {x: 33.587387, y: 0, z: 17.52376}
         - {x: 33.587387, y: 0, z: 20.446125}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -927,6 +935,7 @@ MonoBehaviour:
         points:
         - {x: 33.587387, y: 0, z: 20.446125}
         - {x: 36.396004, y: 0, z: 20.446125}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -946,6 +955,7 @@ MonoBehaviour:
         points:
         - {x: 36.396004, y: 0, z: 20.446125}
         - {x: 36.396004, y: 0, z: 23.438442}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -965,6 +975,7 @@ MonoBehaviour:
         points:
         - {x: 36.396004, y: 0, z: 23.438442}
         - {x: 39.409496, y: 0, z: 23.438442}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -984,6 +995,7 @@ MonoBehaviour:
         points:
         - {x: 39.409496, y: 0, z: 23.438442}
         - {x: 39.409496, y: 0, z: 26.63876}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1003,6 +1015,7 @@ MonoBehaviour:
         points:
         - {x: 39.409496, y: 0, z: 26.63876}
         - {x: 42.458244, y: 0, z: 26.63876}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1022,6 +1035,7 @@ MonoBehaviour:
         points:
         - {x: 42.458244, y: 0, z: 26.63876}
         - {x: 42.458244, y: 0, z: 29.623146}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1041,6 +1055,7 @@ MonoBehaviour:
         points:
         - {x: 42.458244, y: 0, z: 29.623146}
         - {x: 45.454685, y: 0, z: 29.623146}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1060,6 +1075,7 @@ MonoBehaviour:
         points:
         - {x: 45.454685, y: 0, z: 29.623146}
         - {x: 45.454685, y: 0, z: 41.66436}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1079,6 +1095,7 @@ MonoBehaviour:
         points:
         - {x: 45.454685, y: 0, z: 41.66436}
         - {x: 48.495655, y: 0, z: 41.66436}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1098,6 +1115,7 @@ MonoBehaviour:
         points:
         - {x: 48.495655, y: 0, z: 41.66436}
         - {x: 48.495655, y: 0, z: 44.743195}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1117,6 +1135,7 @@ MonoBehaviour:
         points:
         - {x: 48.495655, y: 0, z: 44.743195}
         - {x: 59.89273, y: 0, z: 44.743195}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1136,6 +1155,7 @@ MonoBehaviour:
         points:
         - {x: 59.89273, y: 0, z: 44.743195}
         - {x: 59.89273, y: 0, z: 47.942226}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1155,6 +1175,7 @@ MonoBehaviour:
         points:
         - {x: 59.89273, y: 0, z: 47.942226}
         - {x: 63.114166, y: 0, z: 47.942226}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1174,6 +1195,7 @@ MonoBehaviour:
         points:
         - {x: 63.114166, y: 0, z: 47.942226}
         - {x: 63.114166, y: 0, z: 60.054638}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1193,6 +1215,7 @@ MonoBehaviour:
         points:
         - {x: 63.114166, y: 0, z: 60.054638}
         - {x: 66.04298, y: 0, z: 60.054638}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1212,6 +1235,7 @@ MonoBehaviour:
         points:
         - {x: 66.04298, y: 0, z: 60.054638}
         - {x: 66.04298, y: 0, z: 62.96171}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1231,6 +1255,7 @@ MonoBehaviour:
         points:
         - {x: 66.04298, y: 0, z: 62.96171}
         - {x: 68.983376, y: 0, z: 62.96171}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1250,6 +1275,7 @@ MonoBehaviour:
         points:
         - {x: 68.983376, y: 0, z: 62.96171}
         - {x: 68.983376, y: 0, z: 65.99589}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1269,6 +1295,7 @@ MonoBehaviour:
         points:
         - {x: 68.983376, y: 0, z: 65.99589}
         - {x: 71.923004, y: 0, z: 65.99589}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1288,6 +1315,7 @@ MonoBehaviour:
         points:
         - {x: 71.923004, y: 0, z: 65.99589}
         - {x: 71.923004, y: 0, z: 68.98733}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1307,6 +1335,7 @@ MonoBehaviour:
         points:
         - {x: 71.923004, y: 0, z: 68.98733}
         - {x: 75.08148, y: 0, z: 68.98733}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1326,6 +1355,7 @@ MonoBehaviour:
         points:
         - {x: 75.08148, y: 0, z: 68.98733}
         - {x: 75.08148, y: 0, z: 72.00339}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1345,6 +1375,7 @@ MonoBehaviour:
         points:
         - {x: 75.08148, y: 0, z: 72.00339}
         - {x: 78.26599, y: 0, z: 72.00339}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1364,6 +1395,7 @@ MonoBehaviour:
         points:
         - {x: 78.26599, y: 0, z: 72.00339}
         - {x: 78.26599, y: 0, z: 77.68527}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1383,6 +1415,7 @@ MonoBehaviour:
         points:
         - {x: 78.26599, y: 0, z: 77.68527}
         - {x: 86.968704, y: 0, z: 77.68527}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1402,6 +1435,7 @@ MonoBehaviour:
         points:
         - {x: 86.968704, y: 0, z: 77.68527}
         - {x: 86.968704, y: 0, z: 80.64659}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1421,6 +1455,7 @@ MonoBehaviour:
         points:
         - {x: 86.968704, y: 0, z: 80.64659}
         - {x: 90.356384, y: 0, z: 80.64659}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1440,6 +1475,7 @@ MonoBehaviour:
         points:
         - {x: 90.356384, y: 0, z: 80.64659}
         - {x: 90.356384, y: 0, z: 86.90195}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1459,6 +1495,7 @@ MonoBehaviour:
         points:
         - {x: 90.356384, y: 0, z: 86.90195}
         - {x: 93.60455, y: 0, z: 86.90195}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1478,6 +1515,7 @@ MonoBehaviour:
         points:
         - {x: 93.60455, y: 0, z: 86.90195}
         - {x: 93.60455, y: 0, z: 89.918846}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1497,6 +1535,7 @@ MonoBehaviour:
         points:
         - {x: 93.60455, y: 0, z: 89.918846}
         - {x: 96.72643, y: 0, z: 89.918846}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1516,6 +1555,7 @@ MonoBehaviour:
         points:
         - {x: 96.72643, y: 0, z: 89.918846}
         - {x: 96.72643, y: 0, z: 101.163414}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1535,6 +1575,7 @@ MonoBehaviour:
         points:
         - {x: 96.72643, y: 0, z: 101.163414}
         - {x: 102.686935, y: 0, z: 101.163414}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1554,6 +1595,7 @@ MonoBehaviour:
         points:
         - {x: 102.686935, y: 0, z: 101.163414}
         - {x: 102.686935, y: 0, z: 104.16635}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1573,6 +1615,7 @@ MonoBehaviour:
         points:
         - {x: 102.686935, y: 0, z: 104.16635}
         - {x: 117.70606, y: 0, z: 104.16635}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1592,6 +1635,7 @@ MonoBehaviour:
         points:
         - {x: 117.70606, y: 0, z: 104.16635}
         - {x: 117.70606, y: 0, z: 110.27005}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1611,6 +1655,7 @@ MonoBehaviour:
         points:
         - {x: 117.70606, y: 0, z: 110.27005}
         - {x: 126.169876, y: 0, z: 110.27005}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1630,6 +1675,7 @@ MonoBehaviour:
         points:
         - {x: 126.169876, y: 0, z: 110.27005}
         - {x: 126.169876, y: 0, z: 113.363594}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1649,6 +1695,7 @@ MonoBehaviour:
         points:
         - {x: 126.169876, y: 0, z: 113.363594}
         - {x: 129.564, y: 0, z: 113.363594}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1668,6 +1715,7 @@ MonoBehaviour:
         points:
         - {x: 129.564, y: 0, z: 113.363594}
         - {x: 129.564, y: 0, z: 119.929405}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1687,6 +1735,7 @@ MonoBehaviour:
         points:
         - {x: 129.564, y: 0, z: 119.929405}
         - {x: 132.54042, y: 0, z: 119.929405}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1706,6 +1755,7 @@ MonoBehaviour:
         points:
         - {x: 132.54042, y: 0, z: 119.929405}
         - {x: 132.54042, y: 0, z: 123.00342}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1725,6 +1775,7 @@ MonoBehaviour:
         points:
         - {x: 132.54042, y: 0, z: 123.00342}
         - {x: 135.44508, y: 0, z: 123.00342}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1744,6 +1795,7 @@ MonoBehaviour:
         points:
         - {x: 135.44508, y: 0, z: 123.00342}
         - {x: 135.44508, y: 0, z: 132.10284}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1763,6 +1815,7 @@ MonoBehaviour:
         points:
         - {x: 135.44508, y: 0, z: 132.10284}
         - {x: 137.12038, y: 0, z: 132.10284}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1782,6 +1835,7 @@ MonoBehaviour:
         points:
         - {x: 137.12038, y: 0, z: 132.10284}
         - {x: 137.12038, y: 0, z: 133.77396}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1801,6 +1855,7 @@ MonoBehaviour:
         points:
         - {x: 137.12038, y: 0, z: 133.77396}
         - {x: 142.96312, y: 0, z: 133.77396}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1820,6 +1875,7 @@ MonoBehaviour:
         points:
         - {x: 142.96312, y: 0, z: 133.77396}
         - {x: 142.96312, y: 0, z: 151.0376}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1839,6 +1895,7 @@ MonoBehaviour:
         points:
         - {x: 142.96312, y: 0, z: 151.0376}
         - {x: 149.18298, y: 0, z: 151.0376}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1858,6 +1915,7 @@ MonoBehaviour:
         points:
         - {x: 149.18298, y: 0, z: 151.0376}
         - {x: 149.18298, y: 0, z: 159.95253}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1877,6 +1935,7 @@ MonoBehaviour:
         points:
         - {x: 149.18298, y: 0, z: 159.95253}
         - {x: 152.05643, y: 0, z: 159.95253}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1896,6 +1955,7 @@ MonoBehaviour:
         points:
         - {x: 152.05643, y: 0, z: 159.95253}
         - {x: 152.05643, y: 0, z: 163.05356}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1915,6 +1975,7 @@ MonoBehaviour:
         points:
         - {x: 152.05643, y: 0, z: 163.05356}
         - {x: 157.73172, y: 0, z: 163.05356}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1934,6 +1995,7 @@ MonoBehaviour:
         points:
         - {x: 157.73172, y: 0, z: 163.05356}
         - {x: 157.73172, y: 0, z: 166.08138}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1953,6 +2015,7 @@ MonoBehaviour:
         points:
         - {x: 157.73172, y: 0, z: 166.08138}
         - {x: 160.78748, y: 0, z: 166.08138}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1972,6 +2035,7 @@ MonoBehaviour:
         points:
         - {x: 160.78748, y: 0, z: 166.08138}
         - {x: 160.78748, y: 0, z: 169.54323}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -1991,6 +2055,7 @@ MonoBehaviour:
         points:
         - {x: 160.78748, y: 0, z: 169.54323}
         - {x: 172.82312, y: 0, z: 169.54323}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2010,6 +2075,7 @@ MonoBehaviour:
         points:
         - {x: 172.82312, y: 0, z: 169.54323}
         - {x: 172.82312, y: 0, z: 175.57095}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2029,6 +2095,7 @@ MonoBehaviour:
         points:
         - {x: 172.82312, y: 0, z: 175.57095}
         - {x: 175.6702, y: 0, z: 175.57095}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2048,6 +2115,7 @@ MonoBehaviour:
         points:
         - {x: 175.6702, y: 0, z: 175.57095}
         - {x: 175.6702, y: 0, z: 185.19011}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2067,6 +2135,7 @@ MonoBehaviour:
         points:
         - {x: 175.6702, y: 0, z: 185.19011}
         - {x: 178.12682, y: 0, z: 185.19011}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2086,6 +2155,7 @@ MonoBehaviour:
         points:
         - {x: 178.12682, y: 0, z: 185.19011}
         - {x: 178.12682, y: 0, z: 188.29007}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2105,6 +2175,7 @@ MonoBehaviour:
         points:
         - {x: 178.12682, y: 0, z: 188.29007}
         - {x: 180.78397, y: 0, z: 188.29007}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2124,6 +2195,7 @@ MonoBehaviour:
         points:
         - {x: 180.78397, y: 0, z: 188.29007}
         - {x: 180.78397, y: 0, z: 191.42398}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2143,6 +2215,7 @@ MonoBehaviour:
         points:
         - {x: 180.78397, y: 0, z: 191.42398}
         - {x: 189.61147, y: 0, z: 191.42398}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2162,6 +2235,7 @@ MonoBehaviour:
         points:
         - {x: 189.61147, y: 0, z: 191.42398}
         - {x: 189.61147, y: 0, z: 194.46626}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2181,6 +2255,7 @@ MonoBehaviour:
         points:
         - {x: 189.61147, y: 0, z: 194.46626}
         - {x: 192.62115, y: 0, z: 194.46626}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2200,6 +2275,7 @@ MonoBehaviour:
         points:
         - {x: 192.62115, y: 0, z: 194.46626}
         - {x: 192.62115, y: 0, z: 197.62321}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2219,6 +2295,7 @@ MonoBehaviour:
         points:
         - {x: 192.62115, y: 0, z: 197.62321}
         - {x: 198.67412, y: 0, z: 197.62321}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2238,6 +2315,7 @@ MonoBehaviour:
         points:
         - {x: 198.67412, y: 0, z: 197.62321}
         - {x: 198.67412, y: 0, z: 200.51128}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2257,6 +2335,7 @@ MonoBehaviour:
         points:
         - {x: 198.67412, y: 0, z: 200.51128}
         - {x: 201.77525, y: 0, z: 200.51128}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2276,6 +2355,7 @@ MonoBehaviour:
         points:
         - {x: 201.77525, y: 0, z: 200.51128}
         - {x: 201.77525, y: 0, z: 208.87546}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2295,6 +2375,7 @@ MonoBehaviour:
         points:
         - {x: 201.77525, y: 0, z: 208.87546}
         - {x: 203.3729, y: 0, z: 208.87546}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2314,6 +2395,7 @@ MonoBehaviour:
         points:
         - {x: 203.3729, y: 0, z: 208.87546}
         - {x: 203.3729, y: 0, z: 210.6527}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2333,6 +2415,7 @@ MonoBehaviour:
         points:
         - {x: 203.3729, y: 0, z: 210.6527}
         - {x: 209.38644, y: 0, z: 210.6527}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2352,6 +2435,7 @@ MonoBehaviour:
         points:
         - {x: 209.38644, y: 0, z: 210.6527}
         - {x: 209.38644, y: 0, z: 264.56796}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2371,6 +2455,7 @@ MonoBehaviour:
         points:
         - {x: 209.38644, y: 0, z: 264.56796}
         - {x: 215.72633, y: 0, z: 264.56796}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2390,6 +2475,7 @@ MonoBehaviour:
         points:
         - {x: 215.72633, y: 0, z: 264.56796}
         - {x: 215.72633, y: 0, z: 273.45914}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2409,6 +2495,7 @@ MonoBehaviour:
         points:
         - {x: 215.72633, y: 0, z: 273.45914}
         - {x: 218.76021, y: 0, z: 273.45914}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2428,6 +2515,7 @@ MonoBehaviour:
         points:
         - {x: 218.76021, y: 0, z: 273.45914}
         - {x: 218.76021, y: 0, z: 279.75027}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2447,6 +2535,7 @@ MonoBehaviour:
         points:
         - {x: 218.76021, y: 0, z: 279.75027}
         - {x: 227.61794, y: 0, z: 279.75027}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2466,6 +2555,7 @@ MonoBehaviour:
         points:
         - {x: 227.61794, y: 0, z: 279.75027}
         - {x: 227.61794, y: 0, z: 282.83084}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2485,6 +2575,7 @@ MonoBehaviour:
         points:
         - {x: 227.61794, y: 0, z: 282.83084}
         - {x: 233.52846, y: 0, z: 282.83084}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2504,6 +2595,7 @@ MonoBehaviour:
         points:
         - {x: 233.52846, y: 0, z: 282.83084}
         - {x: 233.52846, y: 0, z: 288.66794}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2523,6 +2615,7 @@ MonoBehaviour:
         points:
         - {x: 233.52846, y: 0, z: 288.66794}
         - {x: 239.60928, y: 0, z: 288.66794}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2542,6 +2635,7 @@ MonoBehaviour:
         points:
         - {x: 239.60928, y: 0, z: 288.66794}
         - {x: 239.60928, y: 0, z: 297.01187}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2561,6 +2655,7 @@ MonoBehaviour:
         points:
         - {x: 239.60928, y: 0, z: 297.01187}
         - {x: 241.2753, y: 0, z: 297.01187}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2580,6 +2675,7 @@ MonoBehaviour:
         points:
         - {x: 241.2753, y: 0, z: 297.01187}
         - {x: 241.2753, y: 0, z: 298.82898}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2599,6 +2695,7 @@ MonoBehaviour:
         points:
         - {x: 241.2753, y: 0, z: 298.82898}
         - {x: 247.35738, y: 0, z: 298.82898}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2618,6 +2715,7 @@ MonoBehaviour:
         points:
         - {x: 247.35738, y: 0, z: 298.82898}
         - {x: 247.35738, y: 0, z: 305.0314}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2637,6 +2735,7 @@ MonoBehaviour:
         points:
         - {x: 247.35738, y: 0, z: 305.0314}
         - {x: 256.08752, y: 0, z: 305.0314}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2656,6 +2755,7 @@ MonoBehaviour:
         points:
         - {x: 256.08752, y: 0, z: 305.0314}
         - {x: 256.08752, y: 0, z: 308.17688}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2675,6 +2775,7 @@ MonoBehaviour:
         points:
         - {x: 256.08752, y: 0, z: 308.17688}
         - {x: 261.98337, y: 0, z: 308.17688}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2694,6 +2795,7 @@ MonoBehaviour:
         points:
         - {x: 261.98337, y: 0, z: 308.17688}
         - {x: 261.98337, y: 0, z: 314.02386}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2713,6 +2815,7 @@ MonoBehaviour:
         points:
         - {x: 261.98337, y: 0, z: 314.02386}
         - {x: 267.89508, y: 0, z: 314.02386}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2732,6 +2835,7 @@ MonoBehaviour:
         points:
         - {x: 267.89508, y: 0, z: 314.02386}
         - {x: 267.89508, y: 0, z: 325.9385}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2751,6 +2855,7 @@ MonoBehaviour:
         points:
         - {x: 267.89508, y: 0, z: 325.9385}
         - {x: 274.46918, y: 0, z: 325.9385}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2770,6 +2875,7 @@ MonoBehaviour:
         points:
         - {x: 274.46918, y: 0, z: 325.9385}
         - {x: 274.46918, y: 0, z: 328.51044}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2789,6 +2895,7 @@ MonoBehaviour:
         points:
         - {x: 274.46918, y: 0, z: 328.51044}
         - {x: 289.80417, y: 0, z: 328.51044}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2808,6 +2915,7 @@ MonoBehaviour:
         points:
         - {x: 289.80417, y: 0, z: 328.51044}
         - {x: 289.80417, y: 0, z: 334.4365}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2827,6 +2935,7 @@ MonoBehaviour:
         points:
         - {x: 289.80417, y: 0, z: 334.4365}
         - {x: 298.7086, y: 0, z: 334.4365}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2846,6 +2955,7 @@ MonoBehaviour:
         points:
         - {x: 298.7086, y: 0, z: 334.4365}
         - {x: 298.7086, y: 0, z: 337.55676}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2865,6 +2975,7 @@ MonoBehaviour:
         points:
         - {x: 298.7086, y: 0, z: 337.55676}
         - {x: 304.56494, y: 0, z: 337.55676}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2884,6 +2995,7 @@ MonoBehaviour:
         points:
         - {x: 304.56494, y: 0, z: 337.55676}
         - {x: 304.56494, y: 0, z: 346.8692}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2903,6 +3015,7 @@ MonoBehaviour:
         points:
         - {x: 304.56494, y: 0, z: 346.8692}
         - {x: 307.4448, y: 0, z: 346.8692}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2922,6 +3035,7 @@ MonoBehaviour:
         points:
         - {x: 307.4448, y: 0, z: 346.8692}
         - {x: 307.4448, y: 0, z: 352.89514}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2941,6 +3055,7 @@ MonoBehaviour:
         points:
         - {x: 307.4448, y: 0, z: 352.89514}
         - {x: 313.3207, y: 0, z: 352.89514}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2960,6 +3075,7 @@ MonoBehaviour:
         points:
         - {x: 313.3207, y: 0, z: 352.89514}
         - {x: 313.3207, y: 0, z: 358.6271}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2979,6 +3095,7 @@ MonoBehaviour:
         points:
         - {x: 313.3207, y: 0, z: 358.6271}
         - {x: 322.37695, y: 0, z: 358.6271}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -2998,6 +3115,7 @@ MonoBehaviour:
         points:
         - {x: 322.37695, y: 0, z: 358.6271}
         - {x: 322.37695, y: 0, z: 360.34396}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3017,6 +3135,7 @@ MonoBehaviour:
         points:
         - {x: 322.37695, y: 0, z: 360.34396}
         - {x: 324.01147, y: 0, z: 360.34396}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3036,6 +3155,7 @@ MonoBehaviour:
         points:
         - {x: 324.01147, y: 0, z: 360.34396}
         - {x: 324.01147, y: 0, z: 366.5857}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3055,6 +3175,7 @@ MonoBehaviour:
         points:
         - {x: 324.01147, y: 0, z: 366.5857}
         - {x: 330.01898, y: 0, z: 366.5857}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3074,6 +3195,7 @@ MonoBehaviour:
         points:
         - {x: 330.01898, y: 0, z: 366.5857}
         - {x: 330.01898, y: 0, z: 375.19592}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3093,6 +3215,7 @@ MonoBehaviour:
         points:
         - {x: 330.01898, y: 0, z: 375.19592}
         - {x: 332.87732, y: 0, z: 375.19592}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3112,6 +3235,7 @@ MonoBehaviour:
         points:
         - {x: 332.87732, y: 0, z: 375.19592}
         - {x: 332.87732, y: 0, z: 381.1134}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3131,6 +3255,7 @@ MonoBehaviour:
         points:
         - {x: 332.87732, y: 0, z: 381.1134}
         - {x: 339.11176, y: 0, z: 381.1134}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3150,6 +3275,7 @@ MonoBehaviour:
         points:
         - {x: 339.11176, y: 0, z: 381.1134}
         - {x: 339.11176, y: 0, z: 386.89938}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3169,6 +3295,7 @@ MonoBehaviour:
         points:
         - {x: 339.11176, y: 0, z: 386.89938}
         - {x: 342.0977, y: 0, z: 386.89938}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3188,6 +3315,7 @@ MonoBehaviour:
         points:
         - {x: 342.0977, y: 0, z: 386.89938}
         - {x: 342.0977, y: 0, z: 455.91858}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3207,6 +3335,7 @@ MonoBehaviour:
         points:
         - {x: 342.0977, y: 0, z: 455.91858}
         - {x: 348.2558, y: 0, z: 455.91858}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3226,6 +3355,7 @@ MonoBehaviour:
         points:
         - {x: 348.2558, y: 0, z: 455.91858}
         - {x: 348.2558, y: 0, z: 464.66577}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3245,6 +3375,7 @@ MonoBehaviour:
         points:
         - {x: 348.2558, y: 0, z: 464.66577}
         - {x: 351.1286, y: 0, z: 464.66577}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3264,6 +3395,7 @@ MonoBehaviour:
         points:
         - {x: 351.1286, y: 0, z: 464.66577}
         - {x: 351.1286, y: 0, z: 468.01364}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3283,6 +3415,7 @@ MonoBehaviour:
         points:
         - {x: 351.1286, y: 0, z: 468.01364}
         - {x: 357.3219, y: 0, z: 468.01364}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3302,6 +3435,7 @@ MonoBehaviour:
         points:
         - {x: 357.3219, y: 0, z: 468.01364}
         - {x: 357.3219, y: 0, z: 470.96625}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3321,6 +3455,7 @@ MonoBehaviour:
         points:
         - {x: 357.3219, y: 0, z: 470.96625}
         - {x: 360.3921, y: 0, z: 470.96625}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3340,6 +3475,7 @@ MonoBehaviour:
         points:
         - {x: 360.3921, y: 0, z: 470.96625}
         - {x: 360.3921, y: 0, z: 473.94644}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3359,6 +3495,7 @@ MonoBehaviour:
         points:
         - {x: 360.3921, y: 0, z: 473.94644}
         - {x: 371.94614, y: 0, z: 473.94644}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3378,6 +3515,7 @@ MonoBehaviour:
         points:
         - {x: 371.94614, y: 0, z: 473.94644}
         - {x: 371.94614, y: 0, z: 480.538}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3397,6 +3535,7 @@ MonoBehaviour:
         points:
         - {x: 371.94614, y: 0, z: 480.538}
         - {x: 374.45435, y: 0, z: 480.538}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3416,6 +3555,7 @@ MonoBehaviour:
         points:
         - {x: 374.45435, y: 0, z: 480.538}
         - {x: 374.45435, y: 0, z: 495.76297}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3435,6 +3575,7 @@ MonoBehaviour:
         points:
         - {x: 374.45435, y: 0, z: 495.76297}
         - {x: 380.59653, y: 0, z: 495.76297}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3454,6 +3595,7 @@ MonoBehaviour:
         points:
         - {x: 380.59653, y: 0, z: 495.76297}
         - {x: 380.59653, y: 0, z: 503.76852}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3473,6 +3615,7 @@ MonoBehaviour:
         points:
         - {x: 380.59653, y: 0, z: 503.76852}
         - {x: 383.6508, y: 0, z: 503.76852}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3492,6 +3635,7 @@ MonoBehaviour:
         points:
         - {x: 383.6508, y: 0, z: 503.76852}
         - {x: 383.6508, y: 0, z: 507.40628}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3511,6 +3655,7 @@ MonoBehaviour:
         points:
         - {x: 383.6508, y: 0, z: 507.40628}
         - {x: 389.62723, y: 0, z: 507.40628}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3530,6 +3675,7 @@ MonoBehaviour:
         points:
         - {x: 389.62723, y: 0, z: 507.40628}
         - {x: 389.62723, y: 0, z: 510.4662}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3549,6 +3695,7 @@ MonoBehaviour:
         points:
         - {x: 389.62723, y: 0, z: 510.4662}
         - {x: 392.42834, y: 0, z: 510.4662}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3568,6 +3715,7 @@ MonoBehaviour:
         points:
         - {x: 392.42834, y: 0, z: 510.4662}
         - {x: 392.42834, y: 0, z: 513.61804}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3587,6 +3735,7 @@ MonoBehaviour:
         points:
         - {x: 392.42834, y: 0, z: 513.61804}
         - {x: 400.9676, y: 0, z: 513.61804}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3606,6 +3755,7 @@ MonoBehaviour:
         points:
         - {x: 400.9676, y: 0, z: 513.61804}
         - {x: 400.9676, y: 0, z: 515.4645}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3625,6 +3775,7 @@ MonoBehaviour:
         points:
         - {x: 400.9676, y: 0, z: 515.4645}
         - {x: 402.52567, y: 0, z: 515.4645}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3644,6 +3795,7 @@ MonoBehaviour:
         points:
         - {x: 402.52567, y: 0, z: 515.4645}
         - {x: 402.52567, y: 0, z: 521.5361}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3663,6 +3815,7 @@ MonoBehaviour:
         points:
         - {x: 402.52567, y: 0, z: 521.5361}
         - {x: 420.6349, y: 0, z: 521.5361}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3682,6 +3835,7 @@ MonoBehaviour:
         points:
         - {x: 420.6349, y: 0, z: 521.5361}
         - {x: 420.6349, y: 0, z: 527.2907}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3701,6 +3855,7 @@ MonoBehaviour:
         points:
         - {x: 420.6349, y: 0, z: 527.2907}
         - {x: 429.0638, y: 0, z: 527.2907}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3720,6 +3875,7 @@ MonoBehaviour:
         points:
         - {x: 429.0638, y: 0, z: 527.2907}
         - {x: 429.0638, y: 0, z: 530.4006}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3739,6 +3895,7 @@ MonoBehaviour:
         points:
         - {x: 429.0638, y: 0, z: 530.4006}
         - {x: 432.288, y: 0, z: 530.4006}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3758,6 +3915,7 @@ MonoBehaviour:
         points:
         - {x: 432.288, y: 0, z: 530.4006}
         - {x: 432.288, y: 0, z: 536.7024}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3777,6 +3935,7 @@ MonoBehaviour:
         points:
         - {x: 432.288, y: 0, z: 536.7024}
         - {x: 435.05557, y: 0, z: 536.7024}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3796,6 +3955,7 @@ MonoBehaviour:
         points:
         - {x: 435.05557, y: 0, z: 536.7024}
         - {x: 435.05557, y: 0, z: 539.8054}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3815,6 +3975,7 @@ MonoBehaviour:
         points:
         - {x: 435.05557, y: 0, z: 539.8054}
         - {x: 438.1622, y: 0, z: 539.8054}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3834,6 +3995,7 @@ MonoBehaviour:
         points:
         - {x: 438.1622, y: 0, z: 539.8054}
         - {x: 438.1622, y: 0, z: 551.69574}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3853,6 +4015,7 @@ MonoBehaviour:
         points:
         - {x: 438.1622, y: 0, z: 551.69574}
         - {x: 444.19263, y: 0, z: 551.69574}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3872,6 +4035,7 @@ MonoBehaviour:
         points:
         - {x: 444.19263, y: 0, z: 551.69574}
         - {x: 444.19263, y: 0, z: 563.9167}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3891,6 +4055,7 @@ MonoBehaviour:
         points:
         - {x: 444.19263, y: 0, z: 563.9167}
         - {x: 447.1757, y: 0, z: 563.9167}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3910,6 +4075,7 @@ MonoBehaviour:
         points:
         - {x: 447.1757, y: 0, z: 563.9167}
         - {x: 447.1757, y: 0, z: 567.0178}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3929,6 +4095,7 @@ MonoBehaviour:
         points:
         - {x: 447.1757, y: 0, z: 567.0178}
         - {x: 449.92642, y: 0, z: 567.0178}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3948,6 +4115,7 @@ MonoBehaviour:
         points:
         - {x: 449.92642, y: 0, z: 567.0178}
         - {x: 449.92642, y: 0, z: 570.2534}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3967,6 +4135,7 @@ MonoBehaviour:
         points:
         - {x: 449.92642, y: 0, z: 570.2534}
         - {x: 458.63333, y: 0, z: 570.2534}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -3986,6 +4155,7 @@ MonoBehaviour:
         points:
         - {x: 458.63333, y: 0, z: 570.2534}
         - {x: 458.63333, y: 0, z: 573.2553}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4005,6 +4175,7 @@ MonoBehaviour:
         points:
         - {x: 458.63333, y: 0, z: 573.2553}
         - {x: 461.6069, y: 0, z: 573.2553}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4024,6 +4195,7 @@ MonoBehaviour:
         points:
         - {x: 461.6069, y: 0, z: 573.2553}
         - {x: 461.6069, y: 0, z: 576.70746}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4043,6 +4215,7 @@ MonoBehaviour:
         points:
         - {x: 461.6069, y: 0, z: 576.70746}
         - {x: 467.6824, y: 0, z: 576.70746}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4062,6 +4235,7 @@ MonoBehaviour:
         points:
         - {x: 467.6824, y: 0, z: 576.70746}
         - {x: 467.6824, y: 0, z: 579.5433}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4081,6 +4255,7 @@ MonoBehaviour:
         points:
         - {x: 467.6824, y: 0, z: 579.5433}
         - {x: 470.90945, y: 0, z: 579.5433}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4100,6 +4275,7 @@ MonoBehaviour:
         points:
         - {x: 470.90945, y: 0, z: 579.5433}
         - {x: 470.90945, y: 0, z: 588.3116}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4119,6 +4295,7 @@ MonoBehaviour:
         points:
         - {x: 470.90945, y: 0, z: 588.3116}
         - {x: 472.50046, y: 0, z: 588.3116}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4138,6 +4315,7 @@ MonoBehaviour:
         points:
         - {x: 472.50046, y: 0, z: 588.3116}
         - {x: 472.50046, y: 0, z: 589.8049}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4157,6 +4335,7 @@ MonoBehaviour:
         points:
         - {x: 472.50046, y: 0, z: 589.8049}
         - {x: 478.77966, y: 0, z: 589.8049}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4176,6 +4355,7 @@ MonoBehaviour:
         points:
         - {x: 478.77966, y: 0, z: 589.8049}
         - {x: 478.77966, y: 0, z: 607.14624}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4195,6 +4375,7 @@ MonoBehaviour:
         points:
         - {x: 478.77966, y: 0, z: 607.14624}
         - {x: 514.91425, y: 0, z: 607.14624}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
     - startWaypoint:
@@ -4214,6 +4395,7 @@ MonoBehaviour:
         points:
         - {x: 514.91425, y: 0, z: 607.14624}
         - {x: 514.91425, y: 0, z: 646.49207}
+        upDir: {x: 0, y: 1, z: 0}
         isJump: 0
         isTeleport: 0
   references:

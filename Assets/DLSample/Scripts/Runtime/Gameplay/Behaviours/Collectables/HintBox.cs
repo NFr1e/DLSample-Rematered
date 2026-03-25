@@ -90,6 +90,8 @@ namespace DLSample.Gameplay.Behaviours
         {
             IsCollected = false;
 
+            mRenderer.enabled = true;
+
             if (_currentEffect)
             {
                 Destroy(_currentEffect);

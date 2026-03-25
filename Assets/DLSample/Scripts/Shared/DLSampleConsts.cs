@@ -70,7 +70,7 @@ namespace DLSample.Shared
             public const int BACKTRACK_PRIORITY_SKIN_ADAPTER = 20;
             #endregion
 
-            public const float HINT_BOX_TRIGGER_INTERVAL = 0.03f;
+            public const float HINT_BOX_TRIGGER_INTERVAL = 0.1f;
         }
         public struct Input
         {

@@ -1,27 +1,48 @@
-using DLSample.Shared;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DLSample.Shared;
 
-public class PathBuilderWindow : EditorWindow
+namespace DLSample.Editor.PathBuilder
 {
-    [SerializeField]
-    private VisualTreeAsset m_VisualTreeAsset = default;
-
-    [MenuItem(
-        itemName:DLSampleConsts.Editor.MENU_ITEM_PATH_BUILDER,
-        priority = DLSampleConsts.Editor.MENU_ITEM_PATH_BUILDER_PRIORITY)]
-    public static void OpenWindow()
+    public class PathBuilderWindow : EditorWindow
     {
-        PathBuilderWindow window = GetWindow<PathBuilderWindow>();
-        window.titleContent = new GUIContent("PathBuilderWindow");
-        window.minSize = new Vector2(400, 400);
-        window.Show();
-    }
+        [SerializeField]
+        private VisualTreeAsset m_VisualTreeAsset = default;
 
-    public void CreateGUI()
-    {
-        VisualElement root = rootVisualElement;
-        m_VisualTreeAsset.CloneTree(root);
+        private PathBuilderController _controller;
+
+        [MenuItem(
+            itemName: DLSampleConsts.Editor.MENU_ITEM_PATH_BUILDER,
+            priority = DLSampleConsts.Editor.MENU_ITEM_PATH_BUILDER_PRIORITY)]
+        public static void OpenWindow()
+        {
+            PathBuilderWindow window = GetWindow<PathBuilderWindow>();
+
+            window.titleContent = new GUIContent("PathBuilderWindow");
+            window.minSize = new Vector2(400, 400);
+            window.Show();
+        }
+
+        public void CreateGUI()
+        {
+            if (m_VisualTreeAsset == null) return;
+
+            Init();
+        }
+        private void OnDestroy()
+        {
+            Dispose();
+        }
+
+        private void Init()
+        {
+            _controller = new(m_VisualTreeAsset, rootVisualElement);
+            _controller.Init();
+        }
+        private void Dispose()
+        {
+            _controller?.Dispose();
+        }
     }
 }

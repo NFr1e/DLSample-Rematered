@@ -114,6 +114,7 @@ namespace DLSample.Editor.PathGrapher
                         startTime = timeStart,
                         endTime = timeEnd,
                         points = sectionPoints.ToArray(),
+                        upDir = state.rotation * Vector3.up,
                         isJump = isJump,
                     });
                     state.isTeleport = false;
@@ -150,6 +151,7 @@ namespace DLSample.Editor.PathGrapher
                                 startTime = nextTimePoint.time,
                                 endTime = nextTimePoint.time,
                                 points = new Vector3[] { tempPos, state.position },
+                                upDir = state.rotation * Vector3.up,
                                 isJump = false,
                                 isTeleport = true
                             });

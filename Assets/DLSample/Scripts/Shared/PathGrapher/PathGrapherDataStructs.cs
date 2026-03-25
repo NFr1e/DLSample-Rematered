@@ -36,6 +36,7 @@ namespace DLSample.Editor.PathGrapher
         public double endTime;
 
         public Vector3[] points;
+        public Vector3 upDir;
         public bool isJump;
         public bool isTeleport;
     }
